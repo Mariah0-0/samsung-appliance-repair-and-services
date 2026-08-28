@@ -38,9 +38,10 @@ export default function Trust() {
       ],
     },
   ];
+
   return (
     <section className="bg-primary">
-      <div className="sm:w-210 max-w-75 sm:max-w-[95vw] md:max-w-90vw mx-auto mt-25 mb-20 sm:mt-18 sm:mb-15">
+      <div className="max-w-75 sm:w-210 sm:max-w-[95vw] mx-auto mt-25 mb-20 sm:mt-18 sm:mb-15">
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-3 md:gap-4">
           {cards.map((card, index) => {
             const Icon = card.icon;
@@ -49,10 +50,10 @@ export default function Trust() {
                 key={index}
                 className="flex-1 bg-background px-5 sm:px-3 md:px-5 pt-4.75 pb-8.5 md:pb-8"
               >
-                <div className="w-19 h-19 flex justify-center items-center">
+                <div className="flex justify-center items-center w-19 h-19">
                   <Icon color="var(--foreground)" height={55} />
                 </div>
-                <h2 className="text-xl font-bold mt-2">{card.title}</h2>
+                <h2 className="mt-2 text-xl font-bold">{card.title}</h2>
                 <ol className="list-decimal list-outside ml-4.25 mt-3">
                   {card.desc.map((listItem, listIndex) => (
                     <li key={listIndex} className="text-sm font-light">

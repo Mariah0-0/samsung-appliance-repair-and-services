@@ -1,8 +1,8 @@
-import heroImg from "../assets/hero-img.jpg";
+import heroImg from "@/assets/hero-img.jpg";
 import Image from "next/image";
-import Button from "./UI/Button";
-import WhatsApp from "../assets/WhatsApp";
-import Phone from "../assets/Phone";
+import Button from "@/components/UI/Button";
+import WhatsApp from "@/assets/WhatsApp";
+import Phone from "@/assets/Phone";
 
 export default function Hero() {
   return (

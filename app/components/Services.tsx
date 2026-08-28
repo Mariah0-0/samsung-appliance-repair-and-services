@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import ac from "../assets/services-ac.jpg";
-import refrigerator from "../assets/services-refrigerator.jpg";
-import tv from "../assets/services-tv.jpg";
-import washingMachine from "../assets/services-washing-machine.jpg";
-import waterPurifier from "../assets/services-water-purifier.jpg";
-import Wrench from "../assets/Wrench";
-import WhatsApp from "../assets/WhatsApp";
+import ac from "@/assets/services-ac.jpg";
+import refrigerator from "@/assets/services-refrigerator.jpg";
+import tv from "@/assets/services-tv.jpg";
+import washingMachine from "@/assets/services-washing-machine.jpg";
+import waterPurifier from "@/assets/services-water-purifier.jpg";
+import Wrench from "@/assets/Wrench";
+import WhatsApp from "@/assets/WhatsApp";
 
 export default function Services() {
   const services: { title: string; desc: string; image: StaticImageData }[] = [

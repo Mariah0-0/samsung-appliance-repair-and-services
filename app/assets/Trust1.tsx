@@ -1,4 +1,4 @@
-import { IconProps } from "../types/icon";
+import { IconProps } from "@/types/icon";
 
 export default function Trust1({
   color = "currentColor",

@@ -1,10 +1,10 @@
-import Button from "./UI/Button";
-import Calendar from "../assets/Calendar";
-import Trust1 from "../assets/Trust1";
-import Trust2 from "../assets/Trust2";
-import Trust3 from "../assets/Trust3";
+import Button from "@/components/UI/Button";
+import Calendar from "@/assets/Calendar";
+import Trust1 from "@/assets/Trust1";
+import Trust2 from "@/assets/Trust2";
+import Trust3 from "@/assets/Trust3";
 import { ComponentType } from "react";
-import { IconProps } from "../types/icon";
+import { IconProps } from "@/types/icon";
 
 export default function Trust() {
   const cards: {

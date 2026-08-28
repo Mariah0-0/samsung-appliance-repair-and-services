@@ -1,5 +1,5 @@
 import { ReactNode, ComponentType } from "react";
-import { IconProps } from "../../types/icon";
+import { IconProps } from "@/types/icon";
 
 type ButtonProps = {
   children: ReactNode;

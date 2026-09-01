@@ -28,7 +28,7 @@ export default function Button({
     primary: {
       className:
         "bg-accent text-white font-medium border border-accent hover:bg-[#990F00]",
-      iconProps: { color: "#ffffff", height: 24 },
+      iconProps: { color: "var(--background)", height: 24 },
     },
     secondary: {
       className:
@@ -52,7 +52,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={combinedStyles}>
+      <a href={href} target="_blank" className={combinedStyles}>
         {children}
         {iconElement}
       </a>

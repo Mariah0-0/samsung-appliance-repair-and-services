@@ -3,6 +3,7 @@ import Instagram from "@/assets/Instagram";
 import Twitter from "@/assets/Twitter";
 import WhatsApp from "@/assets/WhatsApp";
 import Button from "@/components/UI/Button";
+import { CONTACT, LINKS } from "../config/site";
 
 export default function Footer() {
   const quickLinkStyles = "text-sm font-light uppercase hover:underline";
@@ -35,9 +36,9 @@ export default function Footer() {
           <ul className="text-xs font-light flex flex-col gap-1">
             <li>Samsung Appliance Repair & Services</li>
             <li>Bangalore, Karnataka</li>
-            <li>9741249192</li>
-            <li>9740859192</li>
-            <li>info@domain.com</li>
+            <li>{CONTACT.phone1}</li>
+            <li>{CONTACT.phone2}</li>
+            <li>{CONTACT.email}</li>
           </ul>
           <div className="flex gap-5 mt-5 sm:mt-7">
             <span className="cursor-pointer">
@@ -53,7 +54,11 @@ export default function Footer() {
         </div>
         <div className="sm:order-3">
           <h2 className="font-medium uppercase mb-3 sm:mb-5">Contact Us</h2>
-          <Button variant="accent-outline" icon={WhatsApp}>
+          <Button
+            variant="accent-outline"
+            icon={WhatsApp}
+            href={`${LINKS.whatsapp1}`}
+          >
             9741249192
           </Button>
         </div>

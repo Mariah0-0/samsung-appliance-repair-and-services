@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "@/components/UI/Button";
 import WhatsApp from "@/assets/WhatsApp";
 import Phone from "@/assets/Phone";
+import { LINKS } from "../config/site";
 
 export default function Hero() {
   return (
@@ -16,10 +17,10 @@ export default function Hero() {
           it. Today, at your doorstep.
         </p>
         <div className="flex mt-10 md:mt-8 lg:mt-10 gap-2 sm:gap-4.25 md:gap-5.25">
-          <Button variant="primary" icon={WhatsApp}>
+          <Button variant="primary" icon={WhatsApp} href={`${LINKS.whatsapp1}`}>
             Chat with us
           </Button>
-          <Button variant="secondary" icon={Phone}>
+          <Button variant="secondary" icon={Phone} href={`${LINKS.call1}`}>
             Call us
           </Button>
         </div>

@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import Button from "@/components/UI/Button";
 import ExternalLink from "@/assets/ExternalLink";
+import { CONTACT } from "../config/site";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -124,7 +125,7 @@ export default function ContactForm() {
                   Where to find us
                 </h2>
                 <a
-                  href="https://www.google.com/maps?ll=12.90825,77.610194&z=16&t=m&hl=en&gl=IN&mapclient=embed&q=12%C2%B054%2729.7%22N+77%C2%B036%2736.7%22E+12.908250,+77.610194@12.90825,77.6101944"
+                  href="https://www.google.com/maps/place/12%C2%B054'29.7%22N+77%C2%B036'36.7%22E/@12.9081267,77.6112575,17z/data=!4m4!3m3!8m2!3d12.908245!4d77.610197!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   className="group flex items-center gap-1 text-xs font-light"
                 >
@@ -151,9 +152,9 @@ export default function ContactForm() {
               <ul className="text-xs font-light">
                 <li>Samsung Appliance Repair & Services</li>
                 <li>Bangalore, Karnataka</li>
-                <li>9741249192</li>
-                <li>9740859192</li>
-                <li>info@domain.com</li>
+                <li>{CONTACT.phone1}</li>
+                <li>{CONTACT.phone2}</li>
+                <li>{CONTACT.email}</li>
               </ul>
             </div>
           </div>

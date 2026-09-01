@@ -1,0 +1,64 @@
+import { ComponentType } from "react";
+import { IconProps } from "@/types/icon";
+
+type ButtonProps = {
+  variant?: "primary" | "whatsapp";
+  position?: "left" | "right";
+  icon: ComponentType<IconProps>;
+  href?: string;
+  onClick?: () => void;
+  className?: string;
+};
+
+export default function FloatingCTA({
+  variant = "primary",
+  position = "right",
+  icon: Icon,
+  href,
+  onClick,
+  className = "",
+}: ButtonProps) {
+  const baseStyles =
+    "fixed bottom-4 inline-flex items-center justify-center h-14.5 w-14.5 rounded-full shadow-[0px_2px_4px_0px_rgba(0,0,0,0.20)] transition-colors cursor-pointer";
+
+  const variantStyles: Record<
+    "primary" | "whatsapp",
+    { className: string; iconProps: IconProps }
+  > = {
+    primary: {
+      className: "bg-primary hover:bg-[#386075]",
+      iconProps: { color: "var(--background)", height: 32 },
+    },
+    whatsapp: {
+      className: "bg-[#25D366] hover:bg-[#188741]",
+      iconProps: { color: "var(--background)", height: 32 },
+    },
+  };
+
+  const positionStyles: Record<"left" | "right", string> = {
+    right: "right-4",
+    left: "left-4",
+  };
+
+  const combinedStyles = `${baseStyles} ${variantStyles[variant].className} ${positionStyles[position]} ${className}`;
+
+  const iconElement = (
+    <span className="flex shrink-0 items-center justify-center h-6 sm:h-6.75">
+      <Icon {...variantStyles[variant].iconProps} />
+    </span>
+  );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" className={combinedStyles}>
+        {iconElement}
+      </a>
+    );
+  }
+
+  return (
+    <button onClick={onClick} className={combinedStyles}>
+      {iconElement}
+    </button>
+  );
+}

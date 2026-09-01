@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import WhyChooseUs from "./components/WhyChooseUs";
 import WhoAreWe from "./components/WhoAreWe";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Pricing />
       <WhyChooseUs />
       <WhoAreWe />
+      <ContactForm />
     </>
   );
 }

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import Button from "./UI/Button";
-import ExternalLink from "../assets/ExternalLink";
+import Button from "@/components/UI/Button";
+import ExternalLink from "@/assets/ExternalLink";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

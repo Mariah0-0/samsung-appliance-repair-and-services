@@ -3,7 +3,7 @@ import { IconProps } from "@/types/icon";
 
 type ButtonProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "accent-outline";
   icon?: ComponentType<IconProps>;
   href?: string;
   onClick?: () => void;
@@ -19,19 +19,25 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-12.25 sm:h-12.5 md:h-13 gap-2.5 sm:gap-3.25 md:gap-4.25 px-2 sm:px-5 md:px-6.5 min-[430px]:px-4 font-medium uppercase text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors cursor-pointer";
+    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-12.25 sm:h-12.5 md:h-13 gap-2.5 sm:gap-3.25 md:gap-4.25 px-3 sm:px-5 md:px-6.5 min-[430px]:px-4 uppercase text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors cursor-pointer";
 
   const variantStyles: Record<
-    "primary" | "secondary",
+    "primary" | "secondary" | "accent-outline",
     { className: string; iconProps: IconProps }
   > = {
     primary: {
-      className: "bg-accent text-white border border-accent hover:bg-[#990F00]",
+      className:
+        "bg-accent text-white font-medium border border-accent hover:bg-[#990F00]",
       iconProps: { color: "#ffffff", height: 24 },
     },
     secondary: {
       className:
-        "bg-transparent text-primary border border-primary hover:text-background hover:bg-primary",
+        "bg-transparent text-primary font-medium border border-primary hover:text-background hover:bg-primary",
+      iconProps: { color: "currentColor", height: 24 },
+    },
+    "accent-outline": {
+      className:
+        "bg-transparent text-background font-light border-2 border-accent hover:text-white hover:bg-accent",
       iconProps: { color: "currentColor", height: 24 },
     },
   };

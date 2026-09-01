@@ -19,7 +19,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-13.25 sm:h-15 md:h-17.25 gap-2.5 sm:gap-3.25 md:gap-4.25 px-2 sm:px-5 md:px-6.5 min-[430px]:px-4 font-medium uppercase text-[0.875rem] sm:text-[1rem] tracking-wide transition-colors cursor-pointer";
+    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-12.25 sm:h-12.5 md:h-13 gap-2.5 sm:gap-3.25 md:gap-4.25 px-2 sm:px-5 md:px-6.5 min-[430px]:px-4 font-medium uppercase text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors cursor-pointer";
 
   const variantStyles: Record<
     "primary" | "secondary",

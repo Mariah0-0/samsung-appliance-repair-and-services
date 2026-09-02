@@ -8,6 +8,7 @@ type ButtonProps = {
   href?: string;
   onClick?: () => void;
   className?: string;
+  disabled?: boolean;
 };
 
 export default function Button({
@@ -17,9 +18,13 @@ export default function Button({
   href,
   onClick,
   className = "",
+  disabled = false,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-12.25 sm:h-12.5 md:h-13 gap-2.5 sm:gap-3.25 md:gap-4.25 px-3 sm:px-5 md:px-6.5 min-[430px]:px-4 uppercase text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors cursor-pointer";
+    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-14 sm:h-14.5 gap-2.5 sm:gap-3.25 md:gap-4.25 px-3 sm:px-5 md:px-6.5 min-[430px]:px-4 uppercase text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors cursor-pointer";
+
+  const disabledStyles =
+    "disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none disabled:hover:bg-none";
 
   const variantStyles: Record<
     "primary" | "secondary" | "accent-outline",
@@ -42,7 +47,7 @@ export default function Button({
     },
   };
 
-  const combinedStyles = `${baseStyles} ${variantStyles[variant].className} ${className}`;
+  const combinedStyles = `${baseStyles} ${variantStyles[variant].className} ${disabledStyles} ${className}`;
 
   const iconElement = Icon && (
     <span className="flex shrink-0 items-center justify-center h-6 sm:h-6.75">
@@ -52,7 +57,18 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} target="_blank" className={combinedStyles}>
+      <a
+        href={disabled ? undefined : href}
+        target="_blank"
+        aria-disabled={disabled}
+        tabIndex={disabled ? -1 : undefined}
+        onClick={(e) => {
+          if (disabled) e.preventDefault();
+        }}
+        className={`${combinedStyles} ${
+          disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
+        }`}
+      >
         {children}
         {iconElement}
       </a>
@@ -60,7 +76,7 @@ export default function Button({
   }
 
   return (
-    <button onClick={onClick} className={combinedStyles}>
+    <button onClick={onClick} disabled={disabled} className={combinedStyles}>
       {children}
       {iconElement}
     </button>

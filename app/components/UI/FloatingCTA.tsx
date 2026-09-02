@@ -19,7 +19,7 @@ export default function FloatingCTA({
   className = "",
 }: ButtonProps) {
   const baseStyles =
-    "fixed bottom-4 inline-flex items-center justify-center h-14.5 w-14.5 rounded-full shadow-[0px_2px_4px_0px_rgba(0,0,0,0.20)] transition-colors cursor-pointer";
+    "fixed bottom-4 z-5 inline-flex items-center justify-center h-14.5 w-14.5 rounded-full shadow-[0px_2px_4px_0px_rgba(0,0,0,0.20)] transition-colors cursor-pointer";
 
   const variantStyles: Record<
     "primary" | "whatsapp",

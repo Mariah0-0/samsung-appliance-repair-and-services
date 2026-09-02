@@ -14,11 +14,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-background">
-      <div className="flex flex-col-reverse min-[360px]:flex-row justify-between items-end min-[360px]:items-center h-25 min-[360px]:h-20 px-4 sm:px-6 lg:px-10 py-4 min-[360px]:py-0">
+    <nav className="fixed top-0 left-0 z-5 w-full bg-background">
+      <div className="flex flex-col-reverse min-[360px]:flex-row justify-between items-end min-[360px]:items-center h-23 min-[360px]:h-18 px-4 sm:px-6 lg:px-10 py-3.5 min-[360px]:py-0">
         <a
           href=""
-          className="self-start min-[360px]:self-auto text-[15px] lg:text-base whitespace-nowrap"
+          className="self-start min-[360px]:self-auto text-sm md:text-[15px] lg:text-base whitespace-nowrap"
         >
           <span className="font-bold uppercase">Samsung </span>
           <span className="font-medium">Appliance Repair &amp; Services</span>
@@ -30,9 +30,10 @@ export default function Navbar() {
             <a
               key={link.id}
               href={link.link}
-              className="text-[15px] lg:text-base whitespace-nowrap cursor-pointer"
+              className="group relative text-[15px] lg:text-base whitespace-nowrap cursor-pointer"
             >
               {link.name}
+              <span className="absolute left-0 -bottom-0.5 w-full h-[1.5px] bg-foreground scale-x-0 origin-left will-change-transform group-hover:scale-x-100 transition-transform duration-300 ease-out" />
             </a>
           ))}
         </div>
@@ -64,17 +65,17 @@ export default function Navbar() {
 
       {/* Mobile dropdown menu */}
       <div
-        className={`md:hidden overflow-hidden border-t border-foreground/10 bg-background transition-[max-height] duration-300 ease-in-out ${
+        className={`md:hidden overflow-hidden border-y border-foreground/15 bg-background transition-[max-height] duration-300 ease-in-out ${
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col px-4 py-6 gap-6">
+        <div className="flex flex-col py-2">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={link.link}
               onClick={() => setIsOpen(false)}
-              className="font-medium cursor-pointer"
+              className="px-4 py-2.5 text-[15px] cursor-pointer"
             >
               {link.name}
             </a>

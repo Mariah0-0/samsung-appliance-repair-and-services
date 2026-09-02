@@ -112,7 +112,11 @@ export default function ContactForm() {
                 </p>
               )}
               <div className="flex ml-auto mt-1 sm:mt-0">
-                <Button variant="primary">
+                <Button
+                  variant="primary"
+                  disabled={status === "sending"}
+                  className="h-11.5! md:h-12! px-8!"
+                >
                   {status === "sending" ? "Sending..." : "Send"}
                 </Button>
               </div>

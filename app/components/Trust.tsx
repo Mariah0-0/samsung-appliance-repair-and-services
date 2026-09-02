@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/UI/Button";
 import Calendar from "@/assets/Calendar";
 import Trust1 from "@/assets/Trust1";

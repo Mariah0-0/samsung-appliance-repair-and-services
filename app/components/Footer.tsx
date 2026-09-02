@@ -1,3 +1,5 @@
+"use client";
+
 import Facebook from "@/assets/Facebook";
 import Instagram from "@/assets/Instagram";
 import Twitter from "@/assets/Twitter";

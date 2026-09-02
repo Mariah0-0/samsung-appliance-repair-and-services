@@ -1,3 +1,5 @@
+"use client";
+
 import heroImg from "@/assets/hero-img.jpg";
 import Image from "next/image";
 import Button from "@/components/UI/Button";
@@ -36,7 +38,7 @@ export default function Hero() {
           fill
           className="object-cover"
         />
-        <div className="absolute top-0 left-0 z-10 sm:hidden w-full h-40 bg-gradient-to-b from-stone-100 to-stone-100/0" />
+        <div className="absolute top-0 left-0 z-2 sm:hidden w-full h-40 bg-gradient-to-b from-stone-100 to-stone-100/0" />
       </div>
     </section>
   );

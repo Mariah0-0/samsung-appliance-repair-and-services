@@ -38,7 +38,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-secondary">
+    <section id="services" className="scroll-mt-30 bg-secondary">
       <div className="w-[95vw] mx-auto mt-25 mb-20 sm:mt-18 sm:mb-25">
         <h1 className="text-center text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-11">
           Services

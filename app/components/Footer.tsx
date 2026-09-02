@@ -3,11 +3,33 @@ import Instagram from "@/assets/Instagram";
 import Twitter from "@/assets/Twitter";
 import WhatsApp from "@/assets/WhatsApp";
 import Button from "@/components/UI/Button";
+import { ComponentType } from "react";
+import { IconProps } from "@/types/icon";
 import { CONTACT, LINKS } from "../config/site";
 
 export default function Footer() {
-  const quickLinkStyles = "text-sm font-light uppercase hover:underline";
   const legalLinkStyles = "text-primary text-xs font-light hover:underline";
+
+  const socialLinks: {
+    id: number;
+    icon: ComponentType<IconProps>;
+  }[] = [
+    { id: 1, icon: Instagram },
+    { id: 2, icon: Facebook },
+    { id: 3, icon: Twitter },
+  ];
+
+  const quickLinks: {
+    id: number;
+    name: string;
+    href: string;
+  }[] = [
+    { id: 1, name: "Home", href: "#home" },
+    { id: 2, name: "Services", href: "#services" },
+    { id: 3, name: "Pricing", href: "#pricing" },
+    { id: 4, name: "About Us", href: "#about" },
+    { id: 5, name: "Contact Us", href: "#contact" },
+  ];
 
   return (
     <footer className="bg-foreground text-background px-11 sm:px-10 md:px-15 pt-13 pb-21">
@@ -15,18 +37,15 @@ export default function Footer() {
         <div className="sm:order-2">
           <h2 className="font-medium uppercase mb-4 sm:mb-5">Quick Links</h2>
           <div className="flex flex-col gap-3">
-            <a href="#home" className={quickLinkStyles}>
-              Home
-            </a>
-            <a href="#services" className={quickLinkStyles}>
-              Services
-            </a>
-            <a href="#pricing" className={quickLinkStyles}>
-              Pricing
-            </a>
-            <a href="#about" className={quickLinkStyles}>
-              About Us
-            </a>
+            {quickLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                className="text-sm font-light uppercase hover:underline"
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
         </div>
         <div className="sm:order-1">
@@ -41,15 +60,19 @@ export default function Footer() {
             <li>{CONTACT.email}</li>
           </ul>
           <div className="flex gap-5 mt-5 sm:mt-7">
-            <span className="cursor-pointer">
-              <Instagram height={28} color="var(--background)" />
-            </span>
-            <span className="cursor-pointer">
-              <Facebook height={28} color="var(--background)" />
-            </span>
-            <span className="cursor-pointer">
-              <Twitter height={28} color="var(--background)" />
-            </span>
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.id}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
+                  <Icon height={28} color="var(--background)" />
+                </a>
+              );
+            })}
           </div>
         </div>
         <div className="sm:order-3">

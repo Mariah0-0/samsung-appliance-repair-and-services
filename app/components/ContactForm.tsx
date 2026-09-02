@@ -49,7 +49,7 @@ export default function ContactForm() {
     "w-full bg-background text-[13px] text-foreground placeholder:text-[#989176] px-3 py-2.5 sm:py-2";
 
   return (
-    <section className="bg-primary">
+    <section id="contact" className="scroll-mt-30 bg-primary">
       <div className="flex flex-col min-[890px]:flex-row min-[890px]:justify-between min-[890px]:items-center w-full min-[890px]:w-240 lg:w-255 min-[890px]:max-w-[95vw] min-[890px]:mx-auto mt-12 mb-27 min-[890px]:gap-4">
         <div className="mx-auto min-[890px]:mx-0 w-86 sm:w-full min-[890px]:w-80 max-w-[95vw] min-[890px]:max-w-75 min-[890px]:mb-17 text-background">
           <h1 className="min-[640px]:max-[889px]:text-center min-[890px]:text-left text-4xl min-[890px]:text-5xl min-[890px]:leading-14 font-bold uppercase tracking-wider mb-1 min-[890px]:mb-3">

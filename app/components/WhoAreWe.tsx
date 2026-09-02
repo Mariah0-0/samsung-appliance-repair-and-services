@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function WhoAreWe() {
   return (
-    <section>
+    <section id="about" className="scroll-mt-30">
       <div className="mx-auto w-86 sm:w-[95vw] max-w-[95vw] sm:max-w-150 md:max-w-220 mt-25 mb-20 sm:mt-18 sm:mb-25">
         <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
           <div className="sm:flex-1 sm:order-2">

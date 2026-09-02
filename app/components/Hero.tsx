@@ -7,7 +7,10 @@ import { LINKS } from "../config/site";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col sm:flex-row justify-between w-full sm:w-[57rem] lg:w-[62rem] sm:max-w-[95vw] md:max-w-[90vw] sm:mx-auto mt-45 sm:mt-35 sm:mb-25 md:mt-35 md:mb-25 lg:mt-30 lg:mb-25 gap-10 lg:gap-20">
+    <section
+      id="home"
+      className="scroll-mt-30 flex flex-col sm:flex-row justify-between w-full sm:w-[57rem] lg:w-[62rem] sm:max-w-[95vw] md:max-w-[90vw] sm:mx-auto mt-45 sm:mt-35 sm:mb-25 md:mt-35 md:mb-25 lg:mt-30 lg:mb-25 gap-10 lg:gap-20"
+    >
       <div className="sm:w-95 md:w-105 lg:w-120 mx-4.5 sm:mx-0 my-0 sm:my-20 lg:mt-30 lg:mb-0">
         <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold">
           We fix your broken Samsung appliances.

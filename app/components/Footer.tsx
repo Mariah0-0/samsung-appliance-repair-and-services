@@ -7,7 +7,7 @@ import WhatsApp from "@/assets/WhatsApp";
 import Button from "@/components/UI/Button";
 import { ComponentType } from "react";
 import { IconProps } from "@/types/icon";
-import { CONTACT, LINKS } from "@/config/site.constants";
+import { BUSINESS, CONTACT, LINKS, LOCATION } from "@/config/site.constants";
 import Link from "next/link";
 
 export default function Footer() {
@@ -56,8 +56,8 @@ export default function Footer() {
             Contact Details
           </h2>
           <ul className="text-xs font-light flex flex-col gap-1">
-            <li>Samsung Appliance Repair & Services</li>
-            <li>Bangalore, Karnataka</li>
+            <li>{BUSINESS.name}</li>
+            <li>{`${LOCATION.city}, ${LOCATION.state}`}</li>
             <li>{CONTACT.phone1}</li>
             <li>{CONTACT.phone2}</li>
             <li>{CONTACT.email}</li>
@@ -100,7 +100,7 @@ export default function Footer() {
           </Link>
         </div>
         <p className="text-primary text-xs font-light mt-5 md:mt-0">
-          © 2026 Samsung Appliance Repair & Services. All rights reserved.
+          © 2026 {BUSINESS.name}. All rights reserved.
         </p>
       </div>
     </footer>

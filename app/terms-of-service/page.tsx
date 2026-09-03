@@ -1,4 +1,4 @@
-import { CONTACT } from "@/config/site.constants";
+import { BUSINESS, CONTACT } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
 
 export default async function PrivacyPolicy() {
@@ -17,9 +17,9 @@ export default async function PrivacyPolicy() {
         <span className="font-semibold">October 1, 2026</span>
       </p>
       <p className="mb-2">
-        Welcome to Samsung Appliance Repair & Services. These Terms & Conditions
-        (&quot;Terms&quot;) govern your use of our website {domain} and our
-        appliance repair and maintenance services.
+        Welcome to {BUSINESS.name}. These Terms & Conditions (&quot;Terms&quot;)
+        govern your use of our website {domain} and our appliance repair and
+        maintenance services.
       </p>
       <p className="mb-7">
         By accessing or using our Site and services, you agree to be bound by
@@ -99,10 +99,9 @@ export default async function PrivacyPolicy() {
 
       <h2 className={h2Styles}>6. Limitation of Liability</h2>
       <p className="mb-2">
-        While we strive for the highest service quality, Samsung Appliance
-        Repair & Services is not liable for indirect damages, delays, or issues
-        outside our control (such as defective parts, power outages, or user
-        negligence).
+        While we strive for the highest service quality, {BUSINESS.name} is not
+        liable for indirect damages, delays, or issues outside our control (such
+        as defective parts, power outages, or user negligence).
       </p>
       <p className="mb-7">
         Our liability is limited to the amount paid for the specific service.
@@ -121,8 +120,8 @@ export default async function PrivacyPolicy() {
       <h2 className={h2Styles}>8. Intellectual Property</h2>
       <p className="mb-7">
         All content on this Site, including logos, text, and images, is the
-        property of Samsung Appliance Repair & Services and cannot be used
-        without prior written consent.
+        property of {BUSINESS.name} and cannot be used without prior written
+        consent.
       </p>
 
       <h2 className={h2Styles}>9. Changes to Terms</h2>
@@ -148,7 +147,7 @@ export default async function PrivacyPolicy() {
       <ul className={`${ulStyles} mb-7`}>
         <li>
           <span className="font-semibold">Business:</span>
-          <span> Samsung Appliance Repair & Services</span>
+          <span> {BUSINESS.name}</span>
         </li>
         <li>
           <span className="font-semibold">Website:</span>

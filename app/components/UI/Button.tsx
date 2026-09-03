@@ -22,9 +22,15 @@ export default function Button({
   disabled = false,
   target = "_blank",
 }: ButtonProps) {
-  const baseStyles =
-    "inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center h-14 sm:h-14.5 gap-2.5 sm:gap-3.25 md:gap-4.25 px-3 sm:px-5 md:px-6.5 min-[430px]:px-4 uppercase text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors cursor-pointer";
-
+  const baseStyles = `
+  inline-flex flex-1 min-[430px]:flex-0 min-w-fit items-center justify-center 
+  h-14 sm:h-14.5 gap-2.5 sm:gap-3.25 md:gap-4.25 
+  px-3 sm:px-5 md:px-6.5 min-[430px]:px-4 uppercase 
+  text-[0.85rem] sm:text-[0.95rem] tracking-wide transition-colors 
+  cursor-pointer
+  <focus-visible:outline-none <focus-visible:ring-2 <focus-visible:ring-offset-2 <focus-visible:ring-accent 
+  <focus-visible:ring-offset-background
+`;
   const disabledStyles =
     "disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none disabled:hover:bg-none";
 

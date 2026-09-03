@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import ac from "@/assets/services-ac.jpg";
-import refrigerator from "@/assets/services-refrigerator.jpg";
-import tv from "@/assets/services-tv.jpg";
-import washingMachine from "@/assets/services-washing-machine.jpg";
-import waterPurifier from "@/assets/services-water-purifier.jpg";
+import ac from "@/assets/services-ac.webp";
+import refrigerator from "@/assets/services-refrigerator.webp";
+import tv from "@/assets/services-tv.webp";
+import washingMachine from "@/assets/services-washing-machine.webp";
+import waterPurifier from "@/assets/services-water-purifier.webp";
 import Wrench from "@/assets/Wrench";
 import WhatsApp from "@/assets/WhatsApp";
 
@@ -40,9 +40,9 @@ export default function Services() {
   return (
     <section id="services" className="scroll-mt-30 bg-secondary">
       <div className="w-[95vw] mx-auto mt-25 mb-20 sm:mt-18 sm:mb-25">
-        <h1 className="text-center text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-11">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-11">
           Services
-        </h1>
+        </h2>
         <div className="grid grid-cols-2 lg:grid-cols-3 w-[95vw] max-w-115 sm:max-w-150 lg:max-w-220 gap-2 sm:gap-4 mx-auto">
           {services.map((s, index) => (
             <div
@@ -52,13 +52,13 @@ export default function Services() {
               <Image
                 src={s.image}
                 alt={`${s.title} technician service`}
-                loading="eager"
+                loading="lazy"
                 className="object-cover h-30 sm:h-42"
               />
               <div className="px-2 py-3 sm:px-4 sm:pb-4 md:py-4">
-                <h2 className="text-[17px]/6 sm:text-xl md:text-2xl font-medium">
+                <h3 className="text-[17px]/6 sm:text-xl md:text-2xl font-medium">
                   {s.title}
-                </h2>
+                </h3>
                 <p className="text-xs sm:text-sm font-light mt-1.5">{s.desc}</p>
               </div>
             </div>
@@ -67,9 +67,9 @@ export default function Services() {
             <span className="inline-flex [&_svg]:w-17.25 [&_svg]:h-17.25 sm:[&_svg]:w-22 sm:[&_svg]:h-22">
               <Wrench color="var(--background)" />
             </span>
-            <h2 className="w-full mt-7 text-xl sm:text-2xl font-semibold">
+            <h3 className="w-full mt-7 text-xl sm:text-2xl font-semibold">
               Don&apos;t see your appliance?
-            </h2>
+            </h3>
             <span className="flex w-full mt-2.5 gap-2">
               <span className="[&_svg]:w-5 [&_svg]:h-5 sm:[&_svg]:w-5.75 sm:[&_svg]:h-5.75 lg:[&_svg]:w-7 lg:[&_svg]:h-7">
                 <WhatsApp color="var(--background)" />

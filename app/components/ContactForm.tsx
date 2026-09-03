@@ -3,8 +3,20 @@
 import { useState, FormEvent } from "react";
 import Button from "@/components/UI/Button";
 import ExternalLink from "@/assets/ExternalLink";
-import { CONTACT } from "@/config/site.constants";
+import { BUSINESS, CONTACT, LOCATION } from "@/config/site.constants";
 import Link from "next/link";
+
+const SrOnlyLabel = ({
+  htmlFor,
+  children,
+}: {
+  htmlFor: string;
+  children: string;
+}) => (
+  <label htmlFor={htmlFor} className="sr-only">
+    {children}
+  </label>
+);
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -53,9 +65,9 @@ export default function ContactForm() {
     <section id="contact" className="scroll-mt-30 bg-primary">
       <div className="flex flex-col min-[890px]:flex-row min-[890px]:justify-between min-[890px]:items-center w-full min-[890px]:w-240 lg:w-255 min-[890px]:max-w-[95vw] min-[890px]:mx-auto mt-12 mb-27 min-[890px]:gap-4">
         <div className="mx-auto min-[890px]:mx-0 w-86 sm:w-full min-[890px]:w-80 max-w-[95vw] min-[890px]:max-w-75 min-[890px]:mb-17 text-background">
-          <h1 className="min-[640px]:max-[889px]:text-center min-[890px]:text-left text-4xl min-[890px]:text-5xl min-[890px]:leading-14 font-bold uppercase tracking-wider mb-1 min-[890px]:mb-3">
+          <h2 className="min-[640px]:max-[889px]:text-center min-[890px]:text-left text-4xl min-[890px]:text-5xl min-[890px]:leading-14 font-bold uppercase tracking-wider mb-1 min-[890px]:mb-3">
             Let&apos;s get in touch
-          </h1>
+          </h2>
           <p className="min-[640px]:max-[889px]:text-center min-[890px]:text-left text-sm leading-5.25 min-[890px]:leading-5.75 font-light">
             Tell us what&apos;s wrong, we&apos;ll take it from there.
           </p>
@@ -68,6 +80,7 @@ export default function ContactForm() {
             >
               <input
                 type="text"
+                id="name"
                 name="name"
                 placeholder="Your Name"
                 value={formData.name}
@@ -75,8 +88,10 @@ export default function ContactForm() {
                 required
                 className={`${inputStyles}`}
               />
+              <SrOnlyLabel htmlFor="name">Your full name</SrOnlyLabel>
               <input
                 type="email"
+                id="email"
                 name="email"
                 placeholder="Email Address"
                 value={formData.email}
@@ -84,8 +99,10 @@ export default function ContactForm() {
                 required
                 className={`${inputStyles}`}
               />
+              <SrOnlyLabel htmlFor="email">Your email ID</SrOnlyLabel>
               <input
                 type="text"
+                id="subject"
                 name="subject"
                 placeholder="Subject"
                 value={formData.subject}
@@ -93,8 +110,12 @@ export default function ContactForm() {
                 required
                 className={`${inputStyles}`}
               />
+              <SrOnlyLabel htmlFor="subject">
+                Subject of your message
+              </SrOnlyLabel>
               <textarea
                 name="message"
+                id="message"
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
@@ -102,6 +123,10 @@ export default function ContactForm() {
                 rows={5}
                 className={`${inputStyles} sm:flex-1 resize-none`}
               />
+              <SrOnlyLabel htmlFor="message">
+                Your message describing the appliance issue
+              </SrOnlyLabel>
+              <input type="text" name="_gotcha" style={{ display: "none" }} />
               {status === "success" && (
                 <p className="text-sm text-[#08640B]">
                   Message sent! We&apos;ll get back to you shortly.
@@ -126,11 +151,11 @@ export default function ContactForm() {
           <div className="flex flex-col self-start min-[420px]:self-auto w-86 max-w-[95vw] p-3 sm:p-0 bg-secondary sm:bg-transparent gap-3">
             <div className="flex flex-col gap-1">
               <span className="flex justify-between items-center">
-                <h2 className="text-[17px] font-semibold uppercase tracking-wide">
+                <h3 className="text-[17px] font-semibold uppercase tracking-wide">
                   Where to find us
-                </h2>
+                </h3>
                 <Link
-                  href="https://www.google.com/maps/place/12%C2%B054'29.7%22N+77%C2%B036'36.7%22E/@12.9081267,77.6112575,17z/data=!4m4!3m3!8m2!3d12.908245!4d77.610197!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
+                  href={LOCATION.mapsDirectionsUrl}
                   target="_blank"
                   className="group flex items-center gap-1 text-xs font-light"
                 >
@@ -140,7 +165,7 @@ export default function ContactForm() {
               </span>
               <div className="h-50 pointer-events-auto">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3888.991774688714!2d77.6101944!3d12.90825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU0JzI5LjciTiA3N8KwMzYnMzYuNyJF!5e0!3m2!1sen!2sin!4v1788234203860!5m2!1sen!2sin"
+                  src={LOCATION.mapsEmbedUrl}
                   className="w-full h-full pointer-events-auto"
                   style={{ border: 0 }}
                   allowFullScreen={true}
@@ -148,15 +173,14 @@ export default function ContactForm() {
                   referrerPolicy="strict-origin-when-cross-origin"
                 ></iframe>
               </div>
-              {/* map */}
             </div>
             <div className="flex flex-col gap-1">
-              <h2 className="text-[17px] font-semibold uppercase tracking-wide">
+              <h3 className="text-[17px] font-semibold uppercase tracking-wide">
                 Contact Details
-              </h2>
+              </h3>
               <ul className="text-xs font-light">
-                <li>Samsung Appliance Repair & Services</li>
-                <li>Bangalore, Karnataka</li>
+                <li>{BUSINESS.name}</li>
+                <li>{`${LOCATION.city}, ${LOCATION.state}`}</li>
                 <li>{CONTACT.phone1}</li>
                 <li>{CONTACT.phone2}</li>
                 <li>{CONTACT.email}</li>

@@ -34,9 +34,9 @@ export default function Pricing() {
   return (
     <section id="pricing" className="scroll-mt-30">
       <div className="w-[95vw] mx-auto mt-25 mb-20 sm:mt-18 sm:mb-25">
-        <h1 className="text-center text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-11">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-11">
           Pricing
-        </h1>
+        </h2>
         <table className="w-[95vw] max-w-130 sm:max-w-150 lg:max-w-200 mx-auto">
           <thead>
             <tr className="border-t border-b border-secondary">

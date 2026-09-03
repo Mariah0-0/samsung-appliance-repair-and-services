@@ -1,4 +1,4 @@
-import { CONTACT } from "@/config/site.constants";
+import { BUSINESS, CONTACT } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
 
 export default async function PrivacyPolicy() {
@@ -15,11 +15,11 @@ export default async function PrivacyPolicy() {
         <span className="font-semibold">October 1, 2026</span>
       </p>
       <p className="mb-7">
-        Samsung Appliance Repair & Services (&quot;we&quot;, &quot;us&quot;, or
-        &quot;our&quot;) operates {domain} (the &quot;Site&quot;) and is
-        committed to protecting your privacy. This Privacy Policy explains how
-        we collect, use, disclose, and safeguard your personal information when
-        you visit our Site or use our services.
+        {BUSINESS.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
+        operates {domain} (the &quot;Site&quot;) and is committed to protecting
+        your privacy. This Privacy Policy explains how we collect, use,
+        disclose, and safeguard your personal information when you visit our
+        Site or use our services.
       </p>
 
       <h2 className={h2Styles}>Information We Collect</h2>
@@ -208,7 +208,7 @@ export default async function PrivacyPolicy() {
       <ul className={`${ulStyles} mb-7`}>
         <li>
           <span className="font-semibold">Business:</span>
-          <span> Samsung Appliance Repair & Services</span>
+          <span> {BUSINESS.name}</span>
         </li>
         <li>
           <span className="font-semibold">Website:</span>

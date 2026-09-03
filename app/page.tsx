@@ -5,10 +5,6 @@ import Pricing from "@/components/Pricing";
 import WhyChooseUs from "./components/WhyChooseUs";
 import WhoAreWe from "./components/WhoAreWe";
 import ContactForm from "./components/ContactForm";
-import FloatingCTA from "./components/UI/FloatingCTA";
-import WhatsApp from "./assets/WhatsApp";
-import Phone from "./assets/Phone";
-import { LINKS } from "./config/site.constants";
 
 export default function Home() {
   return (
@@ -20,18 +16,6 @@ export default function Home() {
       <WhyChooseUs />
       <WhoAreWe />
       <ContactForm />
-      <FloatingCTA
-        variant="whatsapp"
-        position="right"
-        icon={WhatsApp}
-        href={`${LINKS.whatsapp1}`}
-      />
-      <FloatingCTA
-        variant="primary"
-        position="left"
-        icon={Phone}
-        href={`${LINKS.call1}`}
-      />
     </>
   );
 }

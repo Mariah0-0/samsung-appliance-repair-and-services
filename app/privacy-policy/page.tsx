@@ -7,7 +7,7 @@ export default async function PrivacyPolicy() {
   const domain = await getDomain();
 
   return (
-    <section className="w-220 max-w-[95vw] mx-auto my-18">
+    <section className="w-[95vw] max-w-150 md:max-w-220 mx-auto my-18">
       <h1 className="text-4xl font-bold text-primary mb-7">Privacy Policy</h1>
 
       <p className="mb-2">

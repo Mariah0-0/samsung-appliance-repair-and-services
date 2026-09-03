@@ -7,7 +7,8 @@ import WhatsApp from "@/assets/WhatsApp";
 import Button from "@/components/UI/Button";
 import { ComponentType } from "react";
 import { IconProps } from "@/types/icon";
-import { CONTACT, LINKS } from "../config/site";
+import { CONTACT, LINKS } from "@/config/site.constants";
+import Link from "next/link";
 
 export default function Footer() {
   const legalLinkStyles = "text-primary text-xs font-light hover:underline";
@@ -83,6 +84,7 @@ export default function Footer() {
             variant="accent-outline"
             icon={WhatsApp}
             href={`${LINKS.whatsapp1}`}
+            target="_blank"
           >
             9741249192
           </Button>
@@ -90,12 +92,12 @@ export default function Footer() {
       </div>
       <div className="flex flex-col md:flex-row md:justify-between max-w-220 mx-auto pt-6 border-t border-t-primary/30">
         <div className="flex justify-between md:order-2 md:gap-8">
-          <a href="/privacy-policy" className={legalLinkStyles}>
+          <Link href="/privacy-policy" className={legalLinkStyles}>
             Privacy Policy
-          </a>
-          <a href="/terms-of-service" className={legalLinkStyles}>
+          </Link>
+          <Link href="/terms-of-service" className={legalLinkStyles}>
             Terms of Service
-          </a>
+          </Link>
         </div>
         <p className="text-primary text-xs font-light mt-5 md:mt-0">
           © 2026 Samsung Appliance Repair & Services. All rights reserved.

@@ -5,13 +5,13 @@ import Image from "next/image";
 import Button from "@/components/UI/Button";
 import WhatsApp from "@/assets/WhatsApp";
 import Phone from "@/assets/Phone";
-import { LINKS } from "../config/site";
+import { LINKS } from "@/config/site.constants";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="scroll-mt-30 flex flex-col sm:flex-row justify-between w-full sm:w-[57rem] lg:w-[62rem] sm:max-w-[95vw] md:max-w-[90vw] sm:mx-auto mt-45 sm:mt-35 sm:mb-25 md:mt-35 md:mb-25 lg:mt-30 lg:mb-25 gap-10 lg:gap-20"
+      className="scroll-mt-30 flex flex-col sm:flex-row justify-between w-full sm:w-[57rem] lg:w-[62rem] sm:max-w-[95vw] md:max-w-[90vw] sm:mx-auto mt-22 min-[360px]:mt-27 sm:mt-17 sm:mb-25 md:mt-17 md:mb-25 lg:mt-12 lg:mb-25 gap-10 lg:gap-20"
     >
       <div className="sm:w-95 md:w-105 lg:w-120 mx-4.5 sm:mx-0 my-0 sm:my-20 lg:mt-30 lg:mb-0">
         <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold">
@@ -22,10 +22,20 @@ export default function Hero() {
           it. Today, at your doorstep.
         </p>
         <div className="flex mt-10 md:mt-8 lg:mt-10 gap-2 sm:gap-4.25 md:gap-5.25">
-          <Button variant="primary" icon={WhatsApp} href={`${LINKS.whatsapp1}`}>
+          <Button
+            variant="primary"
+            icon={WhatsApp}
+            href={`${LINKS.whatsapp1}`}
+            target="_blank"
+          >
             Chat with us
           </Button>
-          <Button variant="secondary" icon={Phone} href={`${LINKS.call1}`}>
+          <Button
+            variant="secondary"
+            icon={Phone}
+            href={`${LINKS.call1}`}
+            target="_blank"
+          >
             Call us
           </Button>
         </div>

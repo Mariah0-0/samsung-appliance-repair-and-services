@@ -1,5 +1,6 @@
 import { ComponentType } from "react";
 import { IconProps } from "@/types/icon";
+import Link from "next/link";
 
 type ButtonProps = {
   variant?: "primary" | "whatsapp";
@@ -50,9 +51,9 @@ export default function FloatingCTA({
 
   if (href) {
     return (
-      <a href={href} target="_blank" className={combinedStyles}>
+      <Link href={href} target="_blank" className={combinedStyles}>
         {iconElement}
-      </a>
+      </Link>
     );
   }
 

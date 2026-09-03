@@ -8,7 +8,7 @@ import ContactForm from "./components/ContactForm";
 import FloatingCTA from "./components/UI/FloatingCTA";
 import WhatsApp from "./assets/WhatsApp";
 import Phone from "./assets/Phone";
-import { LINKS } from "./config/site";
+import { LINKS } from "./config/site.constants";
 
 export default function Home() {
   return (

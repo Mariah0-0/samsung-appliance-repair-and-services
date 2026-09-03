@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +17,13 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 z-5 w-full bg-background">
       <div className="flex flex-col-reverse min-[360px]:flex-row justify-between items-end min-[360px]:items-center h-23 min-[360px]:h-18 px-4 sm:px-6 lg:px-10 py-3.5 min-[360px]:py-0">
-        <a
-          href=""
+        <Link
+          href="/"
           className="self-start min-[360px]:self-auto text-sm md:text-[15px] lg:text-base whitespace-nowrap"
         >
           <span className="font-bold uppercase">Samsung </span>
           <span className="font-medium">Appliance Repair &amp; Services</span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex justify-between items-center w-[53%] max-w-160">
@@ -65,11 +66,11 @@ export default function Navbar() {
 
       {/* Mobile dropdown menu */}
       <div
-        className={`md:hidden overflow-hidden border-y border-foreground/15 bg-background transition-[max-height] duration-300 ease-in-out ${
+        className={`md:hidden overflow-hidden border-t border-foreground/15 bg-background transition-[max-height] duration-300 ease-in-out ${
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col py-2">
+        <div className="flex flex-col py-2 border-b border-foreground/15">
           {navLinks.map((link) => (
             <a
               key={link.id}

@@ -20,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
+        <div className="h-23 min-[360px]:h-18" aria-hidden="true" />
         {children}
         <Footer />
       </body>

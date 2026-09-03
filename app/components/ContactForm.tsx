@@ -3,7 +3,8 @@
 import { useState, FormEvent } from "react";
 import Button from "@/components/UI/Button";
 import ExternalLink from "@/assets/ExternalLink";
-import { CONTACT } from "../config/site";
+import { CONTACT } from "@/config/site.constants";
+import Link from "next/link";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -128,14 +129,14 @@ export default function ContactForm() {
                 <h2 className="text-[17px] font-semibold uppercase tracking-wide">
                   Where to find us
                 </h2>
-                <a
+                <Link
                   href="https://www.google.com/maps/place/12%C2%B054'29.7%22N+77%C2%B036'36.7%22E/@12.9081267,77.6112575,17z/data=!4m4!3m3!8m2!3d12.908245!4d77.610197!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   className="group flex items-center gap-1 text-xs font-light"
                 >
                   <span className="group-hover:underline">View Map</span>
                   <ExternalLink height={14} />
-                </a>
+                </Link>
               </span>
               <div className="h-50 pointer-events-auto">
                 <iframe

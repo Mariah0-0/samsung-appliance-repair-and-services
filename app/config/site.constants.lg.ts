@@ -2,6 +2,7 @@ export const siteConfig = {
   business: {
     name: "LG Appliance Repair & Services",
     brand: "LG",
+    icon: "lg-favicon.ico",
   },
   contact: {
     phone1: "9741249192",

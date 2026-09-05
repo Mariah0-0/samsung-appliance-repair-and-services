@@ -41,13 +41,24 @@ export default function ContactForm() {
     setStatus("sending");
 
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
@@ -126,7 +137,12 @@ export default function ContactForm() {
               <SrOnlyLabel htmlFor="message">
                 Your message describing the appliance issue
               </SrOnlyLabel>
-              <input type="text" name="_gotcha" style={{ display: "none" }} />
+              <input
+                type="text"
+                name="botcheck"
+                style={{ display: "none" }}
+                onChange={() => {}}
+              />
               {status === "success" && (
                 <p className="text-sm text-[#08640B]">
                   Message sent! We&apos;ll get back to you shortly.

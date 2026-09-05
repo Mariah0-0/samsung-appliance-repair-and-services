@@ -3,8 +3,10 @@
 import { useState, FormEvent } from "react";
 import Button from "@/components/UI/Button";
 import ExternalLink from "@/assets/ExternalLink";
-import { BUSINESS, CONTACT, LOCATION } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
 import Link from "next/link";
+
+const { business, contact, location } = site;
 
 const SrOnlyLabel = ({
   htmlFor,
@@ -171,7 +173,7 @@ export default function ContactForm() {
                   Where to find us
                 </h3>
                 <Link
-                  href={LOCATION.mapsDirectionsUrl}
+                  href={location.mapsDirectionsUrl}
                   target="_blank"
                   className="group flex items-center gap-1 text-xs font-light"
                 >
@@ -181,7 +183,7 @@ export default function ContactForm() {
               </span>
               <div className="h-50 pointer-events-auto">
                 <iframe
-                  src={LOCATION.mapsEmbedUrl}
+                  src={location.mapsEmbedUrl}
                   className="w-full h-full pointer-events-auto"
                   style={{ border: 0 }}
                   allowFullScreen={true}
@@ -195,11 +197,11 @@ export default function ContactForm() {
                 Contact Details
               </h3>
               <ul className="text-xs font-light">
-                <li>{BUSINESS.name}</li>
-                <li>{`${LOCATION.city}, ${LOCATION.state}`}</li>
-                <li>{CONTACT.phone1}</li>
-                <li>{CONTACT.phone2}</li>
-                <li>{CONTACT.email}</li>
+                <li>{business.name}</li>
+                <li>{`${location.city}, ${location.state}`}</li>
+                <li>{contact.phone1}</li>
+                <li>{contact.phone2}</li>
+                <li>{contact.email}</li>
               </ul>
             </div>
           </div>

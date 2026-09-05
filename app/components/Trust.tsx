@@ -7,7 +7,9 @@ import Trust2 from "@/assets/Trust2";
 import Trust3 from "@/assets/Trust3";
 import { ComponentType } from "react";
 import { IconProps } from "@/types/icon";
-import { LINKS } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
+
+const { links } = site;
 
 export default function Trust() {
   const cards: {
@@ -72,7 +74,7 @@ export default function Trust() {
           <Button
             variant="primary"
             icon={Calendar}
-            href={`${LINKS.call1}`}
+            href={`${links.call1}`}
             target="_blank"
           >
             Schedule a service

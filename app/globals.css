@@ -6,6 +6,7 @@
   --primary: #508aa8;
   --secondary: #c8d9e6;
   --accent: #ba1200;
+  --accentHover: #990f00;
 }
 
 @theme inline {
@@ -14,6 +15,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-accentHover: var(--accentHover);
   --font-sans: var(--font-inter);
 }
 

@@ -40,7 +40,7 @@ export default function Button({
   > = {
     primary: {
       className:
-        "bg-accent text-white font-medium border border-accent hover:bg-[#990F00]",
+        "bg-accent text-white font-medium border border-accent hover:bg-accentHover",
       iconProps: { color: "var(--background)", height: 24 },
     },
     secondary: {

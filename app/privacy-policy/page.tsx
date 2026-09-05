@@ -1,5 +1,7 @@
-import { BUSINESS, CONTACT } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
+
+const { business, contact } = site;
 
 export default async function PrivacyPolicy() {
   const h2Styles: string = "text-2xl font-semibold mb-4";
@@ -15,7 +17,7 @@ export default async function PrivacyPolicy() {
         <span className="font-semibold">October 1, 2026</span>
       </p>
       <p className="mb-7">
-        {BUSINESS.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
+        {business.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
         operates {domain} (the &quot;Site&quot;) and is committed to protecting
         your privacy. This Privacy Policy explains how we collect, use,
         disclose, and safeguard your personal information when you visit our
@@ -208,7 +210,7 @@ export default async function PrivacyPolicy() {
       <ul className={`${ulStyles} mb-7`}>
         <li>
           <span className="font-semibold">Business:</span>
-          <span> {BUSINESS.name}</span>
+          <span> {business.name}</span>
         </li>
         <li>
           <span className="font-semibold">Website:</span>
@@ -216,11 +218,11 @@ export default async function PrivacyPolicy() {
         </li>
         <li>
           <span className="font-semibold">Phone:</span>
-          <span> {CONTACT.phone1}</span>
+          <span> {contact.phone1}</span>
         </li>
         <li>
           <span className="font-semibold">Alternate phone:</span>
-          <span> {CONTACT.phone2}</span>
+          <span> {contact.phone2}</span>
         </li>
       </ul>
     </section>

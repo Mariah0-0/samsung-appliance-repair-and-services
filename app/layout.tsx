@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "./components/Footer";
-import { CONTACT, LOCATION, BUSINESS } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
 
 const inter = Inter({
@@ -13,40 +13,42 @@ const inter = Inter({
   preload: true,
 });
 
+const { business, contact, location, colors } = site;
+
 export const metadata: Metadata = {
-  title: `${BUSINESS.name} ${LOCATION.city} | Same-Day AC, Fridge & TV Repair`,
-  description: `Expert ${BUSINESS.brand} appliance repair in ${LOCATION.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹449 visiting fee. Book now.`,
+  title: `${business.name} ${location.city} | Same-Day AC, Fridge & TV Repair`,
+  description: `Expert ${business.brand} appliance repair in ${location.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹449 visiting fee. Book now.`,
   keywords: [
-    `${BUSINESS.brand} repair ${LOCATION.city}`,
-    `appliance repair ${LOCATION.city}`,
-    `AC repair ${LOCATION.city}`,
-    `fridge repair ${LOCATION.city}`,
-    `washing machine repair ${LOCATION.city}`,
-    `TV repair ${LOCATION.city}`,
-    `water purifier repair ${LOCATION.city}`,
-    `${BUSINESS.brand} repair ${LOCATION.locality}`,
-    `appliance repair ${LOCATION.locality}`,
-    `AC repair ${LOCATION.locality}`,
-    `fridge repair ${LOCATION.locality}`,
-    `washing machine repair ${LOCATION.locality}`,
-    `TV repair ${LOCATION.locality}`,
-    `water purifier repair ${LOCATION.locality}`,
-    `${BUSINESS.brand} service center ${LOCATION.city}`,
+    `${business.brand} repair ${location.city}`,
+    `appliance repair ${location.city}`,
+    `AC repair ${location.city}`,
+    `fridge repair ${location.city}`,
+    `washing machine repair ${location.city}`,
+    `TV repair ${location.city}`,
+    `water purifier repair ${location.city}`,
+    `${business.brand} repair ${location.locality}`,
+    `appliance repair ${location.locality}`,
+    `AC repair ${location.locality}`,
+    `fridge repair ${location.locality}`,
+    `washing machine repair ${location.locality}`,
+    `TV repair ${location.locality}`,
+    `water purifier repair ${location.locality}`,
+    `${business.brand} service center ${location.city}`,
     `appliance repair near me`,
     `home appliance repair`,
-    `${BUSINESS.brand} washing machine repair`,
-    `${BUSINESS.brand} refrigerator repair`,
-    `${BUSINESS.brand} AC repair`,
-    `${BUSINESS.brand} TV repair`,
-    `${BUSINESS.brand} water purifier repair`,
+    `${business.brand} washing machine repair`,
+    `${business.brand} refrigerator repair`,
+    `${business.brand} AC repair`,
+    `${business.brand} TV repair`,
+    `${business.brand} water purifier repair`,
   ].join(", "),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: `${BUSINESS.name} ${LOCATION.city}`,
-    description: `Same-day ${BUSINESS.brand} appliance repair in ${LOCATION.city}. AC, fridge, washing machine, TV & water purifier.`,
-    siteName: BUSINESS.name,
+    title: `${business.name} ${location.city}`,
+    description: `Same-day ${business.brand} appliance repair in ${location.city}. AC, fridge, washing machine, TV & water purifier.`,
+    siteName: business.name,
     locale: "en_IN",
     type: "website",
   },
@@ -59,21 +61,21 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: BUSINESS.name,
+    name: business.name,
     image: `${baseUrl}/hero-img.webp`,
-    description: `Same-day ${BUSINESS.brand} appliance repair services in ${LOCATION.locality}, ${LOCATION.city} - AC, fridge, washing machine, TV and water purifier repair.`,
+    description: `Same-day ${business.brand} appliance repair services in ${location.locality}, ${location.city} - AC, fridge, washing machine, TV and water purifier repair.`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: LOCATION.locality,
-      addressRegion: LOCATION.state,
-      addressCountry: LOCATION.country,
+      addressLocality: location.locality,
+      addressRegion: location.state,
+      addressCountry: location.country,
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: LOCATION.latitude,
-      longitude: LOCATION.longitude,
+      latitude: location.latitude,
+      longitude: location.longitude,
     },
-    telephone: `+91${CONTACT.phone1}`,
+    telephone: `+91${contact.phone1}`,
     priceRange: "₹449",
     openingHours: "Mo-Su 08:00-20:00",
     serviceType: [
@@ -87,10 +89,10 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       "@type": "GeoCircle",
       geoMidpoint: {
         "@type": "GeoCoordinates",
-        latitude: LOCATION.latitude,
-        longitude: LOCATION.longitude,
+        latitude: location.latitude,
+        longitude: location.longitude,
       },
-      geoRadius: LOCATION.serviceRadius,
+      geoRadius: location.serviceRadius,
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -103,10 +105,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             name: "AC Repair",
             description:
               "Deep cleaning, gas leak repair, PCB issues, and compressor servicing",
-            areaServed: {
-              "@type": "City",
-              name: LOCATION.locality,
-            },
+            areaServed: { "@type": "City", name: location.locality },
           },
           price: "449",
           priceCurrency: "INR",
@@ -118,10 +117,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             name: "Washing Machine Repair",
             description:
               "Drum issues, motor repairs, drain valve faults, and auto-sensor issues",
-            areaServed: {
-              "@type": "City",
-              name: LOCATION.locality,
-            },
+            areaServed: { "@type": "City", name: location.locality },
           },
           price: "449",
           priceCurrency: "INR",
@@ -133,10 +129,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             name: "TV Repair",
             description:
               "Screen issues, motherboard problems, display and sound troubleshooting",
-            areaServed: {
-              "@type": "City",
-              name: LOCATION.locality,
-            },
+            areaServed: { "@type": "City", name: location.locality },
           },
           price: "449",
           priceCurrency: "INR",
@@ -148,10 +141,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             name: "Water Purifier Repair",
             description:
               "Filter & membrane replacement, low water flow, leakage fixes",
-            areaServed: {
-              "@type": "City",
-              name: LOCATION.locality,
-            },
+            areaServed: { "@type": "City", name: location.locality },
           },
           price: "449",
           priceCurrency: "INR",
@@ -163,10 +153,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             name: "Refrigerator Repair",
             description:
               "Compressor issues, gas refill, thermostat problems, and defrost repairs",
-            areaServed: {
-              "@type": "City",
-              name: LOCATION.locality,
-            },
+            areaServed: { "@type": "City", name: location.locality },
           },
           price: "449",
           priceCurrency: "INR",
@@ -176,7 +163,20 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${inter.variable} h-full antialiased`}
+      style={
+        {
+          "--background": colors.background,
+          "--foreground": colors.foreground,
+          "--primary": colors.primary,
+          "--secondary": colors.secondary,
+          "--accent": colors.accent,
+          "--accentHover": colors.accentHover,
+        } as React.CSSProperties
+      }
+    >
       <head>
         <script
           type="application/ld+json"

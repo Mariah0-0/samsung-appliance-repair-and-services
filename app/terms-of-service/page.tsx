@@ -1,5 +1,7 @@
-import { BUSINESS, CONTACT } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
+
+const { business, contact } = site;
 
 export default async function PrivacyPolicy() {
   const h2Styles: string = "text-2xl font-semibold mb-4";
@@ -17,7 +19,7 @@ export default async function PrivacyPolicy() {
         <span className="font-semibold">October 1, 2026</span>
       </p>
       <p className="mb-2">
-        Welcome to {BUSINESS.name}. These Terms & Conditions (&quot;Terms&quot;)
+        Welcome to {business.name}. These Terms & Conditions (&quot;Terms&quot;)
         govern your use of our website {domain} and our appliance repair and
         maintenance services.
       </p>
@@ -99,7 +101,7 @@ export default async function PrivacyPolicy() {
 
       <h2 className={h2Styles}>6. Limitation of Liability</h2>
       <p className="mb-2">
-        While we strive for the highest service quality, {BUSINESS.name} is not
+        While we strive for the highest service quality, {business.name} is not
         liable for indirect damages, delays, or issues outside our control (such
         as defective parts, power outages, or user negligence).
       </p>
@@ -120,7 +122,7 @@ export default async function PrivacyPolicy() {
       <h2 className={h2Styles}>8. Intellectual Property</h2>
       <p className="mb-7">
         All content on this Site, including logos, text, and images, is the
-        property of {BUSINESS.name} and cannot be used without prior written
+        property of {business.name} and cannot be used without prior written
         consent.
       </p>
 
@@ -147,7 +149,7 @@ export default async function PrivacyPolicy() {
       <ul className={`${ulStyles} mb-7`}>
         <li>
           <span className="font-semibold">Business:</span>
-          <span> {BUSINESS.name}</span>
+          <span> {business.name}</span>
         </li>
         <li>
           <span className="font-semibold">Website:</span>
@@ -155,11 +157,11 @@ export default async function PrivacyPolicy() {
         </li>
         <li>
           <span className="font-semibold">Phone:</span>
-          <span> {CONTACT.phone1}</span>
+          <span> {contact.phone1}</span>
         </li>
         <li>
           <span className="font-semibold">Alternate phone:</span>
-          <span> {CONTACT.phone2}</span>
+          <span> {contact.phone2}</span>
         </li>
       </ul>
     </section>

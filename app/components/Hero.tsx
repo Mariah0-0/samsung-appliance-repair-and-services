@@ -5,7 +5,9 @@ import Image from "next/image";
 import Button from "@/components/UI/Button";
 import WhatsApp from "@/assets/WhatsApp";
 import Phone from "@/assets/Phone";
-import { BUSINESS, LINKS } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
+
+const { business, links } = site;
 
 export default function Hero() {
   return (
@@ -15,7 +17,7 @@ export default function Hero() {
     >
       <div className="sm:w-95 md:w-105 lg:w-120 mx-4.5 sm:mx-0 my-0 sm:my-20 lg:mt-30 lg:mb-0">
         <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold">
-          We fix your broken {BUSINESS.brand} appliances.
+          We fix your broken {business.brand} appliances.
         </h1>
         <p className="my-7 md:my-5 lg:my-7 text-sm sm:text-base text-[#989176]">
           AC, washing machine, TV, fridge, or microwave not working? We repair
@@ -25,7 +27,7 @@ export default function Hero() {
           <Button
             variant="primary"
             icon={WhatsApp}
-            href={`${LINKS.whatsapp1}`}
+            href={`${links.whatsapp1}`}
             target="_blank"
           >
             Chat with us
@@ -33,7 +35,7 @@ export default function Hero() {
           <Button
             variant="secondary"
             icon={Phone}
-            href={`${LINKS.call1}`}
+            href={`${links.call1}`}
             target="_blank"
           >
             Call us
@@ -46,6 +48,8 @@ export default function Hero() {
           alt="An array of washing machines"
           loading="eager"
           priority
+          fill
+          sizes="(max-width: 639px) 100vw, (max-width: 1099px) 21.5rem, 100vw"
           className="object-cover"
         />
         <div className="absolute top-0 left-0 z-2 sm:hidden w-full h-40 bg-gradient-to-b from-stone-100 to-stone-100/0" />

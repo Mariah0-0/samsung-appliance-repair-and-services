@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BUSINESS } from "../config/site.constants";
+import { site } from "@/config/site.constants";
+
+const { business } = site;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks: { id: number; name: string; link: string }[] = [
-    { id: 1, name: "Home", link: "#home" },
-    { id: 2, name: "Services", link: "#services" },
-    { id: 3, name: "Pricing", link: "#pricing" },
-    { id: 4, name: "About Us", link: "#about" },
-    { id: 5, name: "Contact Us", link: "#contact" },
+    { id: 1, name: "Home", link: "/#home" },
+    { id: 2, name: "Services", link: "/#services" },
+    { id: 3, name: "Pricing", link: "/#pricing" },
+    { id: 4, name: "About Us", link: "/#about" },
+    { id: 5, name: "Contact Us", link: "/#contact" },
   ];
 
   return (
@@ -25,9 +27,9 @@ export default function Navbar() {
         <Link
           href="/"
           className="self-start min-[360px]:self-auto text-sm md:text-[15px] lg:text-base whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
-          aria-label={`${BUSINESS.name} - Home`}
+          aria-label={`${business.name} - Home`}
         >
-          <span className="font-bold uppercase">{BUSINESS.brand} </span>
+          <span className="font-bold uppercase">{business.brand} </span>
           <span className="font-medium">Appliance Repair &amp; Services</span>
         </Link>
 

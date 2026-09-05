@@ -7,8 +7,10 @@ import WhatsApp from "@/assets/WhatsApp";
 import Button from "@/components/UI/Button";
 import { ComponentType } from "react";
 import { IconProps } from "@/types/icon";
-import { BUSINESS, CONTACT, LINKS, LOCATION } from "@/config/site.constants";
+import { site } from "@/config/site.constants";
 import Link from "next/link";
+
+const { business, contact, links, location } = site;
 
 export default function Footer() {
   const legalLinkStyles = "text-primary text-xs font-light hover:underline";
@@ -27,11 +29,11 @@ export default function Footer() {
     name: string;
     href: string;
   }[] = [
-    { id: 1, name: "Home", href: "#home" },
-    { id: 2, name: "Services", href: "#services" },
-    { id: 3, name: "Pricing", href: "#pricing" },
-    { id: 4, name: "About Us", href: "#about" },
-    { id: 5, name: "Contact Us", href: "#contact" },
+    { id: 1, name: "Home", href: "/#home" },
+    { id: 2, name: "Services", href: "/#services" },
+    { id: 3, name: "Pricing", href: "/#pricing" },
+    { id: 4, name: "About Us", href: "/#about" },
+    { id: 5, name: "Contact Us", href: "/#contact" },
   ];
 
   return (
@@ -56,11 +58,11 @@ export default function Footer() {
             Contact Details
           </h2>
           <ul className="text-xs font-light flex flex-col gap-1">
-            <li>{BUSINESS.name}</li>
-            <li>{`${LOCATION.city}, ${LOCATION.state}`}</li>
-            <li>{CONTACT.phone1}</li>
-            <li>{CONTACT.phone2}</li>
-            <li>{CONTACT.email}</li>
+            <li>{business.name}</li>
+            <li>{`${location.city}, ${location.state}`}</li>
+            <li>{contact.phone1}</li>
+            <li>{contact.phone2}</li>
+            <li>{contact.email}</li>
           </ul>
           <div className="flex gap-5 mt-5 sm:mt-7">
             {socialLinks.map((social) => {
@@ -83,7 +85,7 @@ export default function Footer() {
           <Button
             variant="accent-outline"
             icon={WhatsApp}
-            href={`${LINKS.whatsapp1}`}
+            href={`${links.whatsapp1}`}
             target="_blank"
           >
             9741249192
@@ -100,7 +102,7 @@ export default function Footer() {
           </Link>
         </div>
         <p className="text-primary text-xs font-light mt-5 md:mt-0">
-          © 2026 {BUSINESS.name}. All rights reserved.
+          © 2026 {business.name}. All rights reserved.
         </p>
       </div>
     </footer>

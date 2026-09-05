@@ -1,7 +1,9 @@
 import whyChooseUsImg from "@/assets/why-choose-us.webp";
 import whyChooseUsBG from "@/assets/why-choose-us-bg.webp";
 import Image from "next/image";
-import { BUSINESS } from "../config/site.constants";
+import { site } from "@/config/site.constants";
+
+const { business } = site;
 
 export default function WhyChooseUs() {
   return (
@@ -24,7 +26,7 @@ export default function WhyChooseUs() {
             />
           </div>
           <p className="w-full sm:flex-1 sm:text-right text-sm md:text-base leading-5.25 md:leading-5.75 font-light text-background">
-            At {BUSINESS.name}, we&apos;re not just another repair company,
+            At {business.name}, we&apos;re not just another repair company,
             we&apos;re a name homeowners can rely on. We understand what you
             need when your refrigerator, washing machine, TV, water purifier, or
             air conditioner stops working. Our skilled technicians work quickly
@@ -35,7 +37,7 @@ export default function WhyChooseUs() {
             </span>
             , not just another booking, and back every repair with genuine parts
             and a real warranty. When your appliances give up, trust{" "}
-            {BUSINESS.name} to set things right.
+            {business.name} to set things right.
           </p>
         </div>
       </div>

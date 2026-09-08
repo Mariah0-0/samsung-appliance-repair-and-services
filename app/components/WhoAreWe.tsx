@@ -11,12 +11,16 @@ export default function WhoAreWe() {
               Who Are We?
             </h2>
             <p className="w-full text-sm md:text-base leading-5.25 md:leading-5.75 font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
+              We are a team of certified appliance repair professionals based in
+              Bangalore, dedicated to bringing your home appliances back to
+              life. With years of hands-on experience across all major brands,
+              we understand the frustration when your AC blows warm air, your
+              refrigerator stops chilling, your washing machine refuses to spin,
+              or your microwave sparks instead of heating. That&apos;s why
+              we&apos;ve built our reputation on fast, reliable, and transparent
+              service. We believe in no hidden charges and no unnecessary
+              upsells. Our technicians show up on time, diagnose the issue
+              quickly, and fix it right the first time, all at your doorstep.
             </p>
           </div>
           <div className="w-full sm:w-59 h-55 sm:h-95">

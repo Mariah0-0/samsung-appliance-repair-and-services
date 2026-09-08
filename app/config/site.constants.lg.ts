@@ -24,13 +24,13 @@ export const siteConfig = {
     city: "Bangalore",
     state: "Karnataka",
     country: "IN",
-    locality: "BTM",
+    locality: "Sarjapura",
     serviceRadius: "20km",
-    latitude: "12.90825000",
-    longitude: "77.61019444",
+    latitude: "12.861312",
+    longitude: "77.773825",
     mapsEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3888.991774688714!2d77.6101944!3d12.90825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU0JzI5LjciTiA3N8KwMzYnMzYuNyJF!5e0!3m2!1sen!2sin!4v1788615708017!5m2!1sen!2sin",
-    mapsDirectionsUrl: "https://maps.app.goo.gl/4eG5bcyiVEpBT82R9",
+      "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d124480.32016426048!2d77.6661046!3d12.8426298!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae737dfb6da4d3%3A0xb5fc43730c9ac15e!2sLG%20Washing%20Machine%20Service%20Repair!5e0!3m2!1sen!2sae!4v1788839671739!5m2!1sen!2sae",
+    mapsDirectionsUrl: "https://maps.app.goo.gl/xQYX9QpMmMuKNSdg8",
   },
   colors: {
     background: "#f5f4f0",

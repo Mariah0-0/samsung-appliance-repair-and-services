@@ -5,6 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "./components/Footer";
 import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
+import FloatingCTA from "./components/UI/FloatingCTA";
+import WhatsApp from "./assets/WhatsApp";
+import Phone from "./assets/Phone";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +23,7 @@ const inter = Inter({
   ],
 });
 
-const { business, contact, location, colors } = site;
+const { business, contact, links, location, colors } = site;
 
 export const metadata: Metadata = {
   title: `${business.name} ${location.city} | Same-Day AC, Fridge & TV Repair`,
@@ -179,6 +182,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           "--background": colors.background,
           "--foreground": colors.foreground,
           "--primary": colors.primary,
+          "--primaryHover": colors.primaryHover,
           "--secondary": colors.secondary,
           "--accent": colors.accent,
           "--accentHover": colors.accentHover,
@@ -208,6 +212,18 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <div className="h-23 min-[360px]:h-18" aria-hidden="true" />
         {children}
         <Footer />
+        <FloatingCTA
+          variant="whatsapp"
+          position="right"
+          icon={WhatsApp}
+          href={`${links.whatsapp1}`}
+        />
+        <FloatingCTA
+          variant="primary"
+          position="left"
+          icon={Phone}
+          href={`${links.call1}`}
+        />
       </body>
     </html>
   );

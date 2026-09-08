@@ -36,8 +36,9 @@ export const siteConfig = {
     background: "#f5f4f0",
     foreground: "#031927",
     primary: "#508aa8",
+    primaryHover: "#3d6980",
     secondary: "#c8d9e6",
     accent: "#ba1200",
-    accentHover: "#990F00",
+    accentHover: "#990f00",
   },
 } as const;

@@ -27,7 +27,7 @@ export default function FloatingCTA({
     { className: string; iconProps: IconProps }
   > = {
     primary: {
-      className: "bg-primary hover:bg-[#386075]",
+      className: "bg-primary hover:bg-primaryHover",
       iconProps: { color: "var(--background)", height: 32 },
     },
     whatsapp: {

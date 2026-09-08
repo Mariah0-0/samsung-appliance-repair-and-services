@@ -102,7 +102,7 @@ Every component imports `{ site }` from `@/config/site.constants`. Config shape:
   contact: { phone1, phone2, email },
   links: { whatsapp1, whatsapp2, call1, call2, email },
   location: { city, state, country, locality, serviceRadius, latitude, longitude, mapsEmbedUrl, mapsDirectionsUrl },
-  colors: { background, foreground, primary, secondary, accent, accentHover },
+  colors: { background, foreground, primary, primaryHover, secondary, accent, accentHover },
 }
 ```
 

@@ -1,21 +1,25 @@
+const contact = {
+  phone1: "9741249192",
+  phone2: "9740859192",
+  email: "info@domain.com",
+};
+
+const links = {
+  whatsapp1: `https://wa.me/91${contact.phone1}`,
+  whatsapp2: `https://wa.me/91${contact.phone2}`,
+  call1: `tel:+91${contact.phone1}`,
+  call2: `tel:+91${contact.phone2}`,
+  email: `mailto:${contact.email}`,
+};
+
 export const siteConfig = {
   business: {
     name: "Samsung Appliance Repair & Services",
     brand: "Samsung",
     icon: "samsung-favicon.ico",
   },
-  contact: {
-    phone1: "9741249192",
-    phone2: "9740859192",
-    email: "info@domain.com",
-  },
-  links: {
-    whatsapp1: "https://wa.me/919741249192",
-    whatsapp2: "https://wa.me/919740859192",
-    call1: "tel:+919741249192",
-    call2: "tel:+919740859192",
-    email: "mailto:info@domain.com",
-  },
+  contact,
+  links,
   location: {
     city: "Bangalore",
     state: "Karnataka",

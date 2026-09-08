@@ -88,7 +88,7 @@ export default function Footer() {
             href={`${links.whatsapp1}`}
             target="_blank"
           >
-            9741249192
+            {contact.phone1}
           </Button>
         </div>
       </div>

@@ -1,21 +1,25 @@
+const contact = {
+  phone1: "9740859192",
+  phone2: "9741249192",
+  email: "info@domain.com",
+};
+
+const links = {
+  whatsapp1: `https://wa.me/91${contact.phone1}`,
+  whatsapp2: `https://wa.me/91${contact.phone2}`,
+  call1: `tel:+91${contact.phone1}`,
+  call2: `tel:+91${contact.phone2}`,
+  email: `mailto:${contact.email}`,
+};
+
 export const siteConfig = {
   business: {
     name: "LG Appliance Repair & Services",
     brand: "LG",
     icon: "lg-favicon.ico",
   },
-  contact: {
-    phone1: "9741249192",
-    phone2: "9740859192",
-    email: "info@domain.com",
-  },
-  links: {
-    whatsapp1: "https://wa.me/919741249192",
-    whatsapp2: "https://wa.me/919740859192",
-    call1: "tel:+919741249192",
-    call2: "tel:+919740859192",
-    email: "mailto:info@domain.com",
-  },
+  contact,
+  links,
   location: {
     city: "Bangalore",
     state: "Karnataka",
@@ -30,10 +34,10 @@ export const siteConfig = {
   },
   colors: {
     background: "#f5f4f0",
-    foreground: "#031927",
-    primary: "#D36F03",
-    secondary: "#EBD7C6",
-    accent: "#4137C8",
-    accentHover: "#342CA0",
+    foreground: "#140601",
+    primary: "#d36f03",
+    secondary: "#ebd7c6",
+    accent: "#4137c8",
+    accentHover: "#342ca0",
   },
 } as const;

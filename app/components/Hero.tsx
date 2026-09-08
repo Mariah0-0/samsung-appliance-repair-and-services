@@ -48,8 +48,9 @@ export default function Hero() {
           alt="An array of washing machines"
           loading="eager"
           priority
+          fetchPriority="high"
           fill
-          sizes="(max-width: 639px) 100vw, (max-width: 1099px) 21.5rem, 100vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover"
         />
         <div className="absolute top-0 left-0 z-2 sm:hidden w-full h-40 bg-gradient-to-b from-stone-100 to-stone-100/0" />

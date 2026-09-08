@@ -68,14 +68,13 @@ export default function Footer() {
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
-                <a
+                <span
                   key={social.id}
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
                   <Icon height={28} color="var(--background)" />
-                </a>
+                </span>
               );
             })}
           </div>

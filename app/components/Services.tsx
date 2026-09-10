@@ -7,6 +7,10 @@ import washingMachine from "@/assets/services-washing-machine.webp";
 import waterPurifier from "@/assets/services-water-purifier.webp";
 import Wrench from "@/assets/Wrench";
 import WhatsApp from "@/assets/WhatsApp";
+import Link from "next/link";
+import { site } from "@/config/site.constants";
+
+const { links } = site;
 
 export default function Services() {
   const services: { title: string; desc: string; image: StaticImageData }[] = [
@@ -63,7 +67,11 @@ export default function Services() {
               </div>
             </div>
           ))}
-          <div className="flex flex-col justify-center items-center lg:order-5 lg:translate-y-6 bg-accent text-background px-2 sm:px-4">
+          <Link
+            href={links.whatsapp1}
+            target="_blank"
+            className="flex flex-col justify-center items-center lg:order-5 lg:translate-y-6 bg-accent text-background px-2 sm:px-4"
+          >
             <span className="inline-flex [&_svg]:w-17.25 [&_svg]:h-17.25 sm:[&_svg]:w-22 sm:[&_svg]:h-22">
               <Wrench color="var(--background)" />
             </span>
@@ -78,7 +86,7 @@ export default function Services() {
                 Ask us on WhatsApp
               </p>
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

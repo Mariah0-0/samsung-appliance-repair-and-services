@@ -26,7 +26,7 @@ const inter = Inter({
 const { business, contact, links, location, colors } = site;
 
 export const metadata: Metadata = {
-  title: `${business.name} ${location.city} | Same-Day AC, Fridge & TV Repair`,
+  title: `${business.name} ${location.city} | Same-Day AC, Fridge, Microwave, Water Purifier, & TV Repair`,
   icons: { icon: site.business.icon },
   description: `Expert ${business.brand} appliance repair in ${location.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹449 visiting fee. Book now.`,
   keywords: [

@@ -1,7 +1,7 @@
 const contact = {
   phone1: "9740859192",
   phone2: "9741249192",
-  email: "info@domain.com",
+  email: "rkappliancerepairandservices@gmail.com",
 };
 
 const links = {

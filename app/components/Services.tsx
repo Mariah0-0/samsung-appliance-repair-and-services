@@ -4,7 +4,8 @@ import ac from "@/assets/services-ac.webp";
 import refrigerator from "@/assets/services-refrigerator.webp";
 import tv from "@/assets/services-tv.webp";
 import washingMachine from "@/assets/services-washing-machine.webp";
-import waterPurifier from "@/assets/services-water-purifier.webp";
+import microwaveOven from "@/assets/services-microwave-oven.webp";
+// import waterPurifier from "@/assets/services-water-purifier.webp";
 import Wrench from "@/assets/Wrench";
 import WhatsApp from "@/assets/WhatsApp";
 import Link from "next/link";
@@ -29,10 +30,15 @@ export default function Services() {
       desc: "Screen issues, motherboard problems, display and sound troubleshooting. For LED, OLED, and Smart TVs.",
       image: tv,
     },
+    // {
+    //   title: "Water Purifier Repair",
+    //   desc: "Filter & membrane replacement, low water flow, leakage fixes, & UV/UF component servicing. For RO, UV, and UF purifiers.",
+    //   image: waterPurifier,
+    // },
     {
-      title: "Water Purifier Repair",
-      desc: "Filter & membrane replacement, low water flow, leakage fixes, & UV/UF component servicing. For RO, UV, and UF purifiers.",
-      image: waterPurifier,
+      title: "Microwave Oven Repair",
+      desc: "Heating issues, magnetron replacement, glass plate fixes, and control panel repairs. For solo, grill, and convection models.",
+      image: microwaveOven,
     },
     {
       title: "Refrigerator Repair",

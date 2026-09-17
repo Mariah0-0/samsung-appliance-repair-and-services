@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
           <p className="w-full sm:flex-1 sm:text-right text-sm md:text-base leading-5.25 md:leading-5.75 font-light text-background">
             At {business.name}, we&apos;re not just another repair company,
             we&apos;re a name homeowners can rely on. We understand what you
-            need when your refrigerator, washing machine, TV, water purifier, or
+            need when your refrigerator, washing machine, TV, microwave oven, or
             air conditioner stops working. Our skilled technicians work quickly
             and efficiently to get your appliances back in shape, so your home
             keeps running the way it should.{" "}

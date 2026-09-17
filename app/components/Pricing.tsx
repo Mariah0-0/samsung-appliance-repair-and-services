@@ -19,9 +19,14 @@ export default function Pricing() {
       covers: "Screen, motherboard, sound",
       fee: "₹449",
     },
+    // {
+    //   appliance: "Water Purifier",
+    //   covers: "Filter change, leakage, low flow",
+    //   fee: "₹449",
+    // },
     {
-      appliance: "Water Purifier",
-      covers: "Filter change, leakage, low flow",
+      appliance: "Microwave Oven",
+      covers: "Heating, magnetron, glass plate, control panel",
       fee: "₹449",
     },
     {

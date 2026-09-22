@@ -184,7 +184,7 @@ export default function ContactForm() {
               <div className="h-50 pointer-events-auto">
                 <iframe
                   src={location.mapsEmbedUrl}
-                  title="Google Maps showing Samsung Appliance Repair & Services location in Bangalore"
+                  title={`Google Maps showing ${business.name} location in Bangalore`}
                   className="w-full h-full pointer-events-auto"
                   style={{ border: 0 }}
                   allowFullScreen={true}

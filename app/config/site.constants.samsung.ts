@@ -33,9 +33,9 @@ export const siteConfig = {
     mapsDirectionsUrl: "https://maps.app.goo.gl/4eG5bcyiVEpBT82R9",
   },
   colors: {
-    background: "#f5f4f0",
+    background: "#f9f8f6",
     foreground: "#031927",
-    primary: "#508aa8",
+    primary: "#1d76a5",
     primaryHover: "#3d6980",
     secondary: "#c8d9e6",
     accent: "#ba1200",

@@ -25,45 +25,51 @@ const inter = Inter({
 
 const { business, contact, links, location, colors } = site;
 
-export const metadata: Metadata = {
-  title: `${business.name} ${location.city} | Same-Day AC, Fridge, Microwave, Water Purifier, & TV Repair`,
-  icons: { icon: site.business.icon },
-  description: `Expert ${business.brand} appliance repair in ${location.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹449 visiting fee. Book now.`,
-  keywords: [
-    `${business.brand} repair ${location.city}`,
-    `appliance repair ${location.city}`,
-    `AC repair ${location.city}`,
-    `fridge repair ${location.city}`,
-    `washing machine repair ${location.city}`,
-    `TV repair ${location.city}`,
-    `water purifier repair ${location.city}`,
-    `${business.brand} repair ${location.locality}`,
-    `appliance repair ${location.locality}`,
-    `AC repair ${location.locality}`,
-    `fridge repair ${location.locality}`,
-    `washing machine repair ${location.locality}`,
-    `TV repair ${location.locality}`,
-    `water purifier repair ${location.locality}`,
-    `${business.brand} service center ${location.city}`,
-    `appliance repair near me`,
-    `home appliance repair`,
-    `${business.brand} washing machine repair`,
-    `${business.brand} refrigerator repair`,
-    `${business.brand} AC repair`,
-    `${business.brand} TV repair`,
-    `${business.brand} water purifier repair`,
-  ].join(", "),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: `${business.name} ${location.city}`,
-    description: `Same-day ${business.brand} appliance repair in ${location.city}. AC, fridge, washing machine, TV & water purifier.`,
-    siteName: business.name,
-    locale: "en_IN",
-    type: "website",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const domain = await getDomain();
+  const baseUrl = `https://${domain}`;
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: `${business.name} ${location.city} | Same-Day AC, Fridge, Microwave, Water Purifier, & TV Repair`,
+    icons: { icon: site.business.icon },
+    description: `Expert ${business.brand} appliance repair in ${location.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹449 visiting fee. Book now.`,
+    keywords: [
+      `${business.brand} repair ${location.city}`,
+      `appliance repair ${location.city}`,
+      `AC repair ${location.city}`,
+      `fridge repair ${location.city}`,
+      `washing machine repair ${location.city}`,
+      `TV repair ${location.city}`,
+      `water purifier repair ${location.city}`,
+      `${business.brand} repair ${location.locality}`,
+      `appliance repair ${location.locality}`,
+      `AC repair ${location.locality}`,
+      `fridge repair ${location.locality}`,
+      `washing machine repair ${location.locality}`,
+      `TV repair ${location.locality}`,
+      `water purifier repair ${location.locality}`,
+      `${business.brand} service center ${location.city}`,
+      `appliance repair near me`,
+      `home appliance repair`,
+      `${business.brand} washing machine repair`,
+      `${business.brand} refrigerator repair`,
+      `${business.brand} AC repair`,
+      `${business.brand} TV repair`,
+      `${business.brand} water purifier repair`,
+    ].join(", "),
+    alternates: {
+      canonical: baseUrl,
+    },
+    openGraph: {
+      title: `${business.name} ${location.city}`,
+      description: `Same-day ${business.brand} appliance repair in ${location.city}. AC, fridge, washing machine, TV & water purifier.`,
+      siteName: business.name,
+      locale: "en_IN",
+      type: "website",
+    },
+  };
+}
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const domain = await getDomain();

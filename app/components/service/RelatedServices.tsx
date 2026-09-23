@@ -5,8 +5,6 @@ import { ServiceDefinition } from "@/config/services.constants";
 import { site } from "@/config/site.constants";
 import ArrowRight from "../../assets/ArrowRight";
 
-const { location } = site;
-
 export default function RelatedServices({
   services,
   currentService,
@@ -31,7 +29,7 @@ export default function RelatedServices({
               aria-current="page"
               className="relative block text-primary border-2 border-primary/30 cursor-default"
             >
-              <span className="absolute top-2 right-2 z-[2] bg-primary text-background text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-2 py-1">
+              <span className="absolute top-2 right-2 z-2 bg-primary text-background text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-2 py-1">
                 You&apos;re viewing
               </span>
               {currentService.image && (

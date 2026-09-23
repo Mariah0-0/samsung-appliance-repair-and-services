@@ -54,7 +54,7 @@ export default function ServiceHero({
           </nav>
 
           <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold text-white">
-            {business.brand} {service.name} in {location.city}
+            {business.brand} {service.name}
           </h1>
 
           <p className="my-7 md:my-5 lg:my-7 text-sm sm:text-base text-white/85">

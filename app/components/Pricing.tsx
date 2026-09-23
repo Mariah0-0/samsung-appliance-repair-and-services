@@ -1,8 +1,5 @@
 import Link from "next/link";
-import { site } from "@/config/site.constants";
 import { VISITING_FEE, getEnabledServices } from "@/config/services.constants";
-
-const { location } = site;
 
 export default function Pricing() {
   const services = getEnabledServices();
@@ -29,12 +26,12 @@ export default function Pricing() {
           </thead>
           <tbody>
             {services.map((s) => (
-              <tr key={s.key}>
+              <tr
+                key={s.key}
+                className="group relative cursor-pointer transition-colors duration-100 hover:text-primary"
+              >
                 <td className="pl-0.75 pr-2 py-5 text-sm md:text-base lg:text-[17px]">
-                  <Link
-                    href={`/${s.baseSlug}`}
-                    className="hover:underline hover:text-primary"
-                  >
+                  <Link href={`/${s.baseSlug}`} className="relative z-2">
                     {s.pricingLabel}
                   </Link>
                 </td>
@@ -43,6 +40,17 @@ export default function Pricing() {
                 </td>
                 <td className="pl-2 pr-0.75 py-5 text-base md:text-lg lg:text-[19px] font-semibold">
                   {VISITING_FEE}
+                </td>
+                <td className="absolute inset-0 p-0">
+                  <Link
+                    href={`/${s.baseSlug}`}
+                    className="block w-full h-full"
+                    aria-label={`View ${s.pricingLabel} service page`}
+                  >
+                    <span className="sr-only">
+                      View {s.pricingLabel} service page
+                    </span>
+                  </Link>
                 </td>
               </tr>
             ))}

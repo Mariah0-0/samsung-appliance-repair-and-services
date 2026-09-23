@@ -8,6 +8,7 @@ import Button from "@/components/UI/Button";
 import { ComponentType } from "react";
 import { IconProps } from "@/types/icon";
 import { site } from "@/config/site.constants";
+import { getEnabledServices } from "@/config/services.constants";
 import Link from "next/link";
 
 const { business, contact, links, location } = site;
@@ -36,24 +37,12 @@ export default function Footer() {
     { id: 5, name: "Contact Us", href: "/#contact" },
   ];
 
+  const serviceLinks = getEnabledServices();
+
   return (
     <footer className="bg-foreground text-background px-11 sm:px-10 md:px-15 pt-13 pb-21">
-      <div className="flex flex-col sm:flex-row sm:justify-between max-w-220 mx-auto gap-11 sm:gap-6 mb-11">
-        <div className="sm:order-2">
-          <h2 className="font-medium uppercase mb-4 sm:mb-5">Quick Links</h2>
-          <div className="flex flex-col gap-3">
-            {quickLinks.map((link) => (
-              <a
-                key={link.id}
-                href={link.href}
-                className="text-sm font-light uppercase hover:underline"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="sm:order-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap lg:justify-between max-w-250 mx-auto gap-11 sm:gap-x-6 sm:gap-y-11 lg:gap-x-8 mb-11">
+        <div className="lg:w-fit">
           <h2 className="font-medium uppercase mb-4 sm:mb-5">
             Contact Details
           </h2>
@@ -79,10 +68,40 @@ export default function Footer() {
             })}
           </div>
         </div>
-        <div className="sm:order-3">
+        <div className="lg:w-fit">
+          <h2 className="font-medium uppercase mb-4 sm:mb-5">Quick Links</h2>
+          <div className="flex flex-col gap-3">
+            {quickLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                className="text-sm font-light uppercase hover:underline"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="lg:w-fit">
+          <h2 className="font-medium uppercase mb-4 sm:mb-5">Services</h2>
+          <div className="flex flex-col gap-3">
+            {serviceLinks.map((service) => (
+              <Link
+                key={service.key}
+                href={`/${service.baseSlug}`}
+                className="text-sm font-light uppercase hover:underline"
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="lg:w-fit">
           <h2 className="font-medium uppercase mb-3 sm:mb-5">Contact Us</h2>
           <Button
-            variant="accent-outline"
+            color="accent"
+            buttonStyle="outline"
+            className="text-background font-normal"
             icon={WhatsApp}
             href={`${links.whatsapp1}`}
             target="_blank"
@@ -91,7 +110,7 @@ export default function Footer() {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between max-w-220 mx-auto pt-6 border-t border-t-primary/30">
+      <div className="flex flex-col md:flex-row md:justify-between max-w-250 mx-auto pt-6 border-t border-t-primary/30">
         <div className="flex justify-between md:order-2 md:gap-8">
           <Link href="/privacy-policy" className={legalLinkStyles}>
             Privacy Policy

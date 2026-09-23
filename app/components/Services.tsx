@@ -1,51 +1,14 @@
 import Image from "next/image";
-import { StaticImageData } from "next/image";
-import ac from "@/assets/services-ac.webp";
-import refrigerator from "@/assets/services-refrigerator.webp";
-import tv from "@/assets/services-tv.webp";
-import washingMachine from "@/assets/services-washing-machine.webp";
-import microwaveOven from "@/assets/services-microwave-oven.webp";
-// import waterPurifier from "@/assets/services-water-purifier.webp";
+import Link from "next/link";
 import Wrench from "@/assets/Wrench";
 import WhatsApp from "@/assets/WhatsApp";
-import Link from "next/link";
 import { site } from "@/config/site.constants";
+import { getEnabledServices } from "@/config/services.constants";
 
-const { links } = site;
+const { links, location } = site;
 
 export default function Services() {
-  const services: { title: string; desc: string; image: StaticImageData }[] = [
-    {
-      title: "AC repair",
-      desc: "Deep cleaning, gas leak repair, PCB issues, and compressor servicing. Both for split and window ACs.",
-      image: ac,
-    },
-    {
-      title: "Washing Machine Repair",
-      desc: "Drum issues, motor repairs, drain valve faults, and auto-sensor issues. For front & top loads, and semi-automatic machines.",
-      image: washingMachine,
-    },
-    {
-      title: "TV Repair",
-      desc: "Screen issues, motherboard problems, display and sound troubleshooting. For LED, OLED, and Smart TVs.",
-      image: tv,
-    },
-    // {
-    //   title: "Water Purifier Repair",
-    //   desc: "Filter & membrane replacement, low water flow, leakage fixes, & UV/UF component servicing. For RO, UV, and UF purifiers.",
-    //   image: waterPurifier,
-    // },
-    {
-      title: "Microwave Oven Repair",
-      desc: "Heating issues, magnetron replacement, glass plate fixes, and control panel repairs. For solo, grill, and convection models.",
-      image: microwaveOven,
-    },
-    {
-      title: "Refrigerator Repair",
-      desc: "Compressor issues, gas refill, thermostat problems, and defrost repairs. For single-door, double-door, and cooler models.",
-      image: refrigerator,
-    },
-  ];
+  const services = getEnabledServices();
 
   return (
     <section id="services" className="scroll-mt-30 bg-secondary">
@@ -55,28 +18,35 @@ export default function Services() {
         </h2>
         <div className="grid grid-cols-2 lg:grid-cols-3 w-[95vw] max-w-115 sm:max-w-150 lg:max-w-220 gap-2 sm:gap-4 mx-auto">
           {services.map((s, index) => (
-            <div
-              key={index}
-              className={`bg-primary text-background ${index == 4 ? "lg:order-6" : ""} lg:translate-0 ${index == 2 || index == 3 ? "sm:-translate-x-4" : ""} ${index == 1 ? "lg:translate-y-6" : ""}`}
+            <Link
+              key={s.key}
+              href={`/${s.baseSlug}`}
+              className={`group block bg-primary text-background transition-colors duration-200 hover:bg-primaryHover ${index == 4 ? "lg:order-6" : ""} lg:translate-0 ${index == 2 || index == 3 ? "sm:-translate-x-4" : ""} ${index == 1 ? "lg:translate-y-6" : ""}`}
             >
-              <Image
-                src={s.image}
-                alt={`${s.title} technician service`}
-                loading="lazy"
-                className="object-cover h-30 sm:h-42"
-              />
+              {s.image && (
+                <div className="overflow-hidden">
+                  <Image
+                    src={s.image}
+                    alt={`${s.name} technician service`}
+                    loading="lazy"
+                    className="object-cover h-30 sm:h-42 transition-transform duration-300 ease-out group-hover:scale-105"
+                  />
+                </div>
+              )}
               <div className="px-2 py-3 sm:px-4 sm:pb-4 md:py-4">
                 <h3 className="text-[17px]/6 sm:text-xl md:text-2xl font-medium">
-                  {s.title}
+                  {s.name}
                 </h3>
-                <p className="text-xs sm:text-sm font-light mt-1.5">{s.desc}</p>
+                <p className="text-xs sm:text-sm font-light mt-1.5">
+                  {s.cardDesc}
+                </p>
               </div>
-            </div>
+            </Link>
           ))}
           <Link
             href={links.whatsapp1}
             target="_blank"
-            className="flex flex-col justify-center items-center lg:order-5 lg:translate-y-6 bg-accent text-background px-2 sm:px-4"
+            className="flex flex-col justify-center items-center lg:order-5 lg:translate-y-6 bg-accent transition-colors duration-200 hover:bg-accentHover text-background px-2 sm:px-4"
           >
             <span className="inline-flex [&_svg]:w-17.25 [&_svg]:h-17.25 sm:[&_svg]:w-22 sm:[&_svg]:h-22">
               <Wrench color="var(--background)" />

@@ -1,40 +1,11 @@
+import Link from "next/link";
+import { site } from "@/config/site.constants";
+import { VISITING_FEE, getEnabledServices } from "@/config/services.constants";
+
+const { location } = site;
+
 export default function Pricing() {
-  const pricingData: {
-    appliance: string;
-    covers: string;
-    fee: string;
-  }[] = [
-    {
-      appliance: "AC",
-      covers: "Gas leak, PCB, compressor, deep clean",
-      fee: "₹449",
-    },
-    {
-      appliance: "Washing Machine",
-      covers: "Drum, motor, drain valve",
-      fee: "₹449",
-    },
-    {
-      appliance: "TV (LED/Smart)",
-      covers: "Screen, motherboard, sound",
-      fee: "₹449",
-    },
-    // {
-    //   appliance: "Water Purifier",
-    //   covers: "Filter change, leakage, low flow",
-    //   fee: "₹449",
-    // },
-    {
-      appliance: "Microwave Oven",
-      covers: "Heating, magnetron, glass plate, control panel",
-      fee: "₹449",
-    },
-    {
-      appliance: "Refrigerator",
-      covers: "Compressor, gas refill, thermostat",
-      fee: "₹449",
-    },
-  ];
+  const services = getEnabledServices();
 
   return (
     <section id="pricing" className="scroll-mt-30">
@@ -57,16 +28,21 @@ export default function Pricing() {
             </tr>
           </thead>
           <tbody>
-            {pricingData.map((row, index) => (
-              <tr key={index}>
+            {services.map((s) => (
+              <tr key={s.key}>
                 <td className="pl-0.75 pr-2 py-5 text-sm md:text-base lg:text-[17px]">
-                  {row.appliance}
+                  <Link
+                    href={`/${s.baseSlug}`}
+                    className="hover:underline hover:text-primary"
+                  >
+                    {s.pricingLabel}
+                  </Link>
                 </td>
                 <td className="px-2 py-5 text-sm md:text-base lg:text-[17px] font-light">
-                  {row.covers}
+                  {s.pricingCovers}
                 </td>
                 <td className="pl-2 pr-0.75 py-5 text-base md:text-lg lg:text-[19px] font-semibold">
-                  {row.fee}
+                  {VISITING_FEE}
                 </td>
               </tr>
             ))}

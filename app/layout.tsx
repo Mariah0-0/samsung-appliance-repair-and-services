@@ -27,7 +27,7 @@ const { business, contact, links, location, colors } = site;
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = await getDomain();
-  const baseUrl = `https://${domain}`;
+  const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
 
   return {
     metadataBase: new URL(baseUrl),
@@ -73,7 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const domain = await getDomain();
-  const baseUrl = `https://${domain}`;
+  const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -205,12 +205,6 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/hero-img.webp"
-          fetchPriority="high"
         />
       </head>
       <body className="min-h-full flex flex-col">

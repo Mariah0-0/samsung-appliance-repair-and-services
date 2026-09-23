@@ -16,6 +16,7 @@ export const siteConfig = {
   business: {
     name: "LG Appliance Repair & Services",
     brand: "LG",
+    legalEntity: "LG Electronics Inc. and/or LG Electronics India Pvt. Ltd.",
     icon: "lg-favicon.ico",
   },
   contact,

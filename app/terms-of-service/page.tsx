@@ -23,9 +23,22 @@ export default async function PrivacyPolicy() {
         govern your use of our website {domain} and our appliance repair and
         maintenance services.
       </p>
-      <p className="mb-7">
+      <p className="mb-2">
         By accessing or using our Site and services, you agree to be bound by
         these Terms. If you do not agree, please do not use our services.
+      </p>
+
+      <p className="mb-7">
+        <span className="font-semibold">Disclaimer:</span> {business.name} is an
+        independent appliance repair and service business and is not affiliated
+        with, authorized by, sponsored by, endorsed by, or otherwise connected
+        with {business.legalEntity}. &quot;{business.brand}&quot; is a trademark
+        of its respective owner and is used on this website solely to identify
+        the brand of appliances we service. {business.name} is not an authorized{" "}
+        {business.brand} service center or {business.brand} representative. For
+        warranty or authorized services, customers should contact{" "}
+        {business.brand} or an authorized {business.brand} service center
+        directly.
       </p>
 
       <h2 className={h2Styles}>1. Services</h2>

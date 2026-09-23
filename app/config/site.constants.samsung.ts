@@ -16,6 +16,8 @@ export const siteConfig = {
   business: {
     name: "Samsung Appliance Repair & Services",
     brand: "Samsung",
+    legalEntity:
+      "Samsung Electronics Co., Ltd. and/or Samsung India Electronics Pvt. Ltd.",
     icon: "samsung-favicon.ico",
   },
   contact,

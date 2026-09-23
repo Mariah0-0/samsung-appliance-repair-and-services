@@ -157,7 +157,8 @@ export default function ContactForm() {
               )}
               <div className="flex ml-auto mt-1 sm:mt-0">
                 <Button
-                  variant="primary"
+                  color="accent"
+                  buttonStyle="filled"
                   disabled={status === "sending"}
                   className="h-11.5! md:h-12! px-8!"
                 >

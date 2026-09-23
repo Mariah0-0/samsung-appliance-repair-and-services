@@ -19,13 +19,15 @@ export default function Hero() {
         <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold">
           We fix your broken {business.brand} appliances.
         </h1>
-        <p className="my-7 md:my-5 lg:my-7 text-sm sm:text-base text-[#989176]">
+        <p className="my-7 md:my-5 lg:my-7 text-sm sm:text-base text-[#77725F]">
           AC, washing machine, TV, fridge, or microwave not working? We repair
           it. Today, at your doorstep.
         </p>
-        <div className="flex mt-10 md:mt-8 lg:mt-10 gap-2 sm:gap-4.25 md:gap-5.25">
+        <div className="flex mt-10 md:mt-8 lg:mt-10 gap-2 sm:gap-4.25 md:gap-5.25 z-0">
           <Button
-            variant="primary"
+            color="accent"
+            buttonStyle="filled"
+            className=" z-0"
             icon={WhatsApp}
             href={`${links.whatsapp1}`}
             target="_blank"
@@ -33,7 +35,8 @@ export default function Hero() {
             Chat with us
           </Button>
           <Button
-            variant="secondary"
+            color="primary"
+            buttonStyle="outline"
             icon={Phone}
             href={`${links.call1}`}
             target="_blank"

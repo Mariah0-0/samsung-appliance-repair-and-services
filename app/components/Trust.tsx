@@ -72,7 +72,8 @@ export default function Trust() {
         </div>
         <div className="w-fit mx-auto mt-10">
           <Button
-            variant="primary"
+            color="accent"
+            buttonStyle="filled"
             icon={Calendar}
             href={`${links.call1}`}
             target="_blank"

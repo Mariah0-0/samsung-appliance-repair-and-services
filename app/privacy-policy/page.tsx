@@ -1,7 +1,20 @@
 import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
+import type { Metadata } from "next";
 
-const { business, contact } = site;
+const { business, contact, location } = site;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const domain = await getDomain();
+  const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
+  const pageUrl = `${baseUrl}/privacy-policy`;
+
+  return {
+    title: `Privacy Policy | ${business.name}`,
+    description: `How ${business.name} collects, uses, and protects your personal information when you use our appliance repair services in ${location.city}.`,
+    alternates: { canonical: pageUrl },
+  };
+}
 
 export default async function PrivacyPolicy() {
   const h2Styles: string = "text-2xl font-semibold mb-4";

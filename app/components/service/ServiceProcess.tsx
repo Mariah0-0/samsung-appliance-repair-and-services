@@ -24,8 +24,7 @@ export default function ServiceProcess() {
           All repairs come with a{" "}
           <span className="font-semibold text-accent">
             90-day replacement warranty
-          </span>{" "}
-          on parts.
+          </span>
         </p>
       </div>
     </section>

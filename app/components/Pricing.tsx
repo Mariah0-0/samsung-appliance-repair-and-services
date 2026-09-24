@@ -28,12 +28,12 @@ export default function Pricing() {
             {services.map((s) => (
               <tr
                 key={s.key}
-                className="group relative cursor-pointer transition-colors duration-100 hover:text-primary"
+                className="group relative transition-colors duration-100 hover:text-primary"
               >
                 <td className="pl-0.75 pr-2 py-5 text-sm md:text-base lg:text-[17px]">
                   <Link
                     href={`/services/${s.baseSlug}`}
-                    className="relative z-2"
+                    className="after:absolute after:inset-0 after:content-['']"
                   >
                     {s.pricingLabel}
                   </Link>
@@ -43,17 +43,6 @@ export default function Pricing() {
                 </td>
                 <td className="pl-2 pr-0.75 py-5 text-base md:text-lg lg:text-[19px] font-semibold">
                   ₹{VISITING_FEE}
-                </td>
-                <td className="absolute inset-0 p-0">
-                  <Link
-                    href={`/services/${s.baseSlug}`}
-                    className="block w-full h-full"
-                    aria-label={`View ${s.pricingLabel} service page`}
-                  >
-                    <span className="sr-only">
-                      View {s.pricingLabel} service page
-                    </span>
-                  </Link>
                 </td>
               </tr>
             ))}

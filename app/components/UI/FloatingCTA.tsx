@@ -9,6 +9,7 @@ type ButtonProps = {
   href?: string;
   onClick?: () => void;
   className?: string;
+  label?: string;
 };
 
 export default function FloatingCTA({
@@ -18,6 +19,7 @@ export default function FloatingCTA({
   href,
   onClick,
   className = "",
+  label,
 }: ButtonProps) {
   const baseStyles =
     "fixed bottom-4 z-5 inline-flex items-center justify-center h-14.5 w-14.5 rounded-full shadow-[0px_2px_4px_0px_rgba(0,0,0,0.20)] transition-colors cursor-pointer";
@@ -51,14 +53,19 @@ export default function FloatingCTA({
 
   if (href) {
     return (
-      <Link href={href} target="_blank" className={combinedStyles}>
+      <Link
+        href={href}
+        target="_blank"
+        aria-label={label}
+        className={combinedStyles}
+      >
         {iconElement}
       </Link>
     );
   }
 
   return (
-    <button onClick={onClick} className={combinedStyles}>
+    <button onClick={onClick} aria-label={label} className={combinedStyles}>
       {iconElement}
     </button>
   );

@@ -209,7 +209,6 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {/* <div className="h-23 min-[360px]:h-18" aria-hidden="true" /> */}
         {children}
         <Footer />
         <FloatingCTA
@@ -217,12 +216,14 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           position="right"
           icon={WhatsApp}
           href={`${links.whatsapp1}`}
+          label="Chat with us on WhatsApp"
         />
         <FloatingCTA
           variant="primary"
           position="left"
           icon={Phone}
           href={`${links.call1}`}
+          label="Call us"
         />
       </body>
     </html>

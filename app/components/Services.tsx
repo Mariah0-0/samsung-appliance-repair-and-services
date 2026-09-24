@@ -70,7 +70,7 @@ export default function Services() {
         </div>
         <div className="mt-8 md:mt-20 flex justify-center">
           <Button
-            color="primary"
+            color="accent"
             buttonStyle="outline"
             icon={ArrowRight}
             href="/services"

@@ -56,7 +56,7 @@ export default function Button({
     },
     accent: {
       className:
-        "bg-accent text-white font-medium border border-accent hover:bg-accentHover hover:border-accentHover",
+        "bg-accent text-background font-medium border border-accent hover:bg-accentHover hover:border-accentHover",
       iconColor: "var(--background)",
     },
   };
@@ -77,7 +77,7 @@ export default function Button({
     },
     accent: {
       className:
-        "bg-transparent text-accent font-medium border-2 border-accent hover:bg-accent hover:text-white",
+        "bg-transparent text-accent font-medium border-2 border-accent hover:bg-accent hover:text-background",
       iconColor: "currentColor",
     },
   };

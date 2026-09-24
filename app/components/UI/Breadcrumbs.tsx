@@ -19,7 +19,7 @@ export default function Breadcrumbs({
       : "hover:underline";
   const listClass =
     variant === "dark"
-      ? "flex items-center gap-1.5 text-xs font-light text-white/70"
+      ? "flex items-center gap-1.5 text-xs font-light text-background/70"
       : "flex items-center gap-1.5 text-xs font-light text-[#989176]";
   const currentClass =
     variant === "dark" ? "text-background" : "text-foreground";

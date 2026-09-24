@@ -204,6 +204,7 @@ export default function ContactForm() {
                 <li>{contact.phone1}</li>
                 <li>{contact.phone2}</li>
                 <li>{contact.email}</li>
+                <li>{contact.openingHours.display}</li>
               </ul>
             </div>
           </div>

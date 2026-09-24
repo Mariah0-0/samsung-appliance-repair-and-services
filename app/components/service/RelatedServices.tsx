@@ -87,7 +87,7 @@ export default function RelatedServices({
           ))}
 
           <Link
-            href="/#services"
+            href="/services"
             className="flex flex-col justify-center items-center bg-accent transition-colors duration-200 hover:bg-accentHover text-background px-2 sm:px-4 lg:order-5 lg:translate-y-6"
           >
             <span className="inline-flex [&_svg]:w-17.25 [&_svg]:h-17.25 sm:[&_svg]:w-22 sm:[&_svg]:h-22">

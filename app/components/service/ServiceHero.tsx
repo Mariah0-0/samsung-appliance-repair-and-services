@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/UI/Breadcrumbs";
 import WhatsApp from "@/assets/WhatsApp";
 import Phone from "@/assets/Phone";
 import { site } from "@/config/site.constants";
-import { ServiceDefinition } from "@/config/services.constants";
+import { ServiceDefinition, VISITING_FEE } from "@/config/services.constants";
 
 const { business, links, location } = site;
 
@@ -45,12 +45,16 @@ export default function ServiceHero({
             ]}
           />
 
-          <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold text-white">
-            {business.brand} {service.name}
+          <h1 className="text-3xl sm:text-4xl min-[1100px]:text-5xl font-bold text-background">
+            {business.brand} {service.name} in {location.city}
           </h1>
 
-          <p className="my-7 md:my-5 lg:my-7 text-sm sm:text-base text-white/85">
+          <p className="my-7 md:my-5 lg:my-7 text-sm sm:text-base text-background">
             {service.intro}
+          </p>
+
+          <p className="text-sm font-medium text-background mb-7">
+            ₹{VISITING_FEE} visiting fee · Same-day service
           </p>
 
           <div className="flex mt-10 md:mt-8 lg:mt-10 gap-2 sm:gap-4.25 md:gap-5.25">

@@ -2,6 +2,10 @@ const contact = {
   phone1: "9741249192",
   phone2: "9740859192",
   email: "rkappliancerepairandservices@gmail.com",
+  openingHours: {
+    display: "Mon–Sun, 9:00 AM – 7:00 PM",
+    schema: "Mo-Su 09:00-19:00",
+  },
 };
 
 const links = {

@@ -1,8 +1,8 @@
-import { getDomain } from "@/config/site.server";
+import { getDomain } from "./config/site.server";
 
 export default async function robots() {
   const domain = await getDomain();
-  const baseUrl = `https://${domain}`;
+  const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
 
   return {
     rules: {

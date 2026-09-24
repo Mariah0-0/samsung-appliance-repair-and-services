@@ -52,6 +52,7 @@ export default function Footer() {
             <li>{contact.phone1}</li>
             <li>{contact.phone2}</li>
             <li>{contact.email}</li>
+            <li>{contact.openingHours.display}</li>
           </ul>
           <div className="flex gap-5 mt-5 sm:mt-7">
             {socialLinks.map((social) => {

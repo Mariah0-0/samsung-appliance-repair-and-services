@@ -10,7 +10,7 @@ export default function ServiceProcess() {
         <ol className="grid grid-cols-1 sm:grid-cols-5 gap-8 sm:gap-4 lg:gap-9 w-[95vw] max-w-60 sm:max-w-220 lg:max-w-300 mx-auto">
           {repairProcess.map((step, index) => (
             <li key={index} className="flex flex-col items-center text-center">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-white text-base font-semibold">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent text-background text-base font-semibold">
                 {index + 1}
               </span>
               <h3 className="mt-3 text-base font-medium">{step.title}</h3>
@@ -20,6 +20,13 @@ export default function ServiceProcess() {
             </li>
           ))}
         </ol>
+        <p className="text-center text-sm font-light mt-10">
+          All repairs come with a{" "}
+          <span className="font-semibold text-accent">
+            90-day replacement warranty
+          </span>{" "}
+          on parts.
+        </p>
       </div>
     </section>
   );

@@ -94,7 +94,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     },
     telephone: `+91${contact.phone1}`,
     priceRange: "₹449",
-    openingHours: "Mo-Su 08:00-20:00",
+    openingHours: contact.openingHours.schema,
     serviceType: [
       "AC Repair",
       "Refrigerator Repair",

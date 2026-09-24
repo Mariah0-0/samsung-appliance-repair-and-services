@@ -34,6 +34,10 @@ Default fallbacks in `globals.css` (samsung colors). Real per-site colors come f
 
 No logo image used anywhere in page content (business name renders as text). Only the browser tab icon differs per brand — `business.icon` in each config, plain path with NO leading slash, file lives in `public/`, applied via `metadata.icons` in `layout.tsx`. `app/favicon.ico` must NOT exist or it silently overrides this.
 
+## Images
+
+All images were converted to webp using `app/scripts/convert-to-webp.js` and then compressed using https://squoosh.app/.
+
 ## Contact form
 
 Web3Forms, no backend. 250 submissions/month **per key** (each site has its own).

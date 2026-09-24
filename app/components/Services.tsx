@@ -76,7 +76,7 @@ export default function Services() {
             href="/services"
             target="_self"
           >
-            View All Services
+            All Services
           </Button>
         </div>
       </div>

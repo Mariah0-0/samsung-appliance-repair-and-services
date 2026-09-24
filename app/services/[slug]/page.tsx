@@ -12,7 +12,7 @@ import ServiceProblems from "@/components/service/ServiceProblems";
 import ServiceProcess from "@/components/service/ServiceProcess";
 import ServiceFAQ from "@/components/service/ServiceFAQ";
 import RelatedServices from "@/components/service/RelatedServices";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 
 const { business, contact, location } = site;
 
@@ -26,17 +26,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps<"/[slug]">): Promise<Metadata> {
+}: PageProps<"/services/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceByUrlSlug(slug);
   if (!service) return {};
 
   const domain = await getDomain();
   const baseUrl = `https://${domain}`;
-  const pageUrl = `${baseUrl}/${slug}`;
+  const pageUrl = `${baseUrl}/services/${slug}`;
 
   const title = `${business.brand} ${service.name} in ${location.city} | ${business.name}`;
-  const description = `${business.brand} ${service.name} in ${location.city}: ${service.pricingCovers}. ${VISITING_FEE} visiting fee, same-day service.`;
+  const description = `${business.brand} ${service.name} in ${location.city}: ${service.pricingCovers}. ₹${VISITING_FEE} visiting fee, same-day service.`;
 
   return {
     title,
@@ -53,14 +53,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function ServicePage({ params }: PageProps<"/[slug]">) {
+export default async function ServicePage({
+  params,
+}: PageProps<"/services/[slug]">) {
   const { slug } = await params;
   const service = getServiceByUrlSlug(slug);
   if (!service) notFound();
 
   const domain = await getDomain();
   const baseUrl = `https://${domain}`;
-  const pageUrl = `${baseUrl}/${slug}`;
+  const pageUrl = `${baseUrl}/services/${slug}`;
 
   const serviceLd = {
     "@context": "https://schema.org",
@@ -85,7 +87,13 @@ export default async function ServicePage({ params }: PageProps<"/[slug]">) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
-      { "@type": "ListItem", position: 2, name: service.name, item: pageUrl },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${baseUrl}/services`,
+      },
+      { "@type": "ListItem", position: 3, name: service.name, item: pageUrl },
     ],
   };
 

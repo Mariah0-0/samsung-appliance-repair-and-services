@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Wrench from "@/assets/Wrench";
 import WhatsApp from "@/assets/WhatsApp";
 import { site } from "@/config/site.constants";
 import { getEnabledServices } from "@/config/services.constants";
+import ArrowRight from "../assets/ArrowRight";
+import Button from "./UI/Button";
 
-const { links, location } = site;
+const { links } = site;
 
 export default function Services() {
   const services = getEnabledServices();
@@ -20,7 +24,7 @@ export default function Services() {
           {services.map((s, index) => (
             <Link
               key={s.key}
-              href={`/${s.baseSlug}`}
+              href={`/services/${s.baseSlug}`}
               className={`group block bg-primary text-background transition-colors duration-200 hover:bg-primaryHover ${index == 4 ? "lg:order-6" : ""} lg:translate-0 ${index == 2 || index == 3 ? "sm:-translate-x-4" : ""} ${index == 1 ? "lg:translate-y-6" : ""}`}
             >
               {s.image && (
@@ -63,6 +67,17 @@ export default function Services() {
               </p>
             </span>
           </Link>
+        </div>
+        <div className="mt-8 md:mt-20 flex justify-center">
+          <Button
+            color="primary"
+            buttonStyle="outline"
+            icon={ArrowRight}
+            href="/services"
+            target="_self"
+          >
+            View All Services
+          </Button>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ import microwaveOven from "@/assets/services-microwave-oven.webp";
 import refrigerator from "@/assets/services-refrigerator.webp";
 import waterPurifier from "@/assets/services-water-purifier.webp";
 
-export const VISITING_FEE = "₹449";
+export const VISITING_FEE = 449;
 
 export type ServiceFAQ = { question: string; answer: string };
 
@@ -64,7 +64,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does AC repair cost?",
-        answer: `The visiting and diagnosis fee is ${VISITING_FEE}. Once the technician inspects the unit, you'll get a repair quote to approve before any work begins.`,
+        answer: `The visiting and diagnosis fee is ₹${VISITING_FEE}. Once the technician inspects the unit, you'll get a repair quote to approve before any work begins.`,
       },
       {
         question: "Do you repair both split and window ACs?",
@@ -109,7 +109,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does washing machine repair cost?",
-        answer: `A ${VISITING_FEE} visiting fee covers the inspection and diagnosis. Repair costs depend on the part or issue and are quoted upfront.`,
+        answer: `A ₹${VISITING_FEE} visiting fee covers the inspection and diagnosis. Repair costs depend on the part or issue and are quoted upfront.`,
       },
       {
         question:
@@ -152,7 +152,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does TV repair cost?",
-        answer: `Diagnosis starts at ${VISITING_FEE}. If a part needs replacing, we'll quote the cost before proceeding.`,
+        answer: `Diagnosis starts at ₹${VISITING_FEE}. If a part needs replacing, we'll quote the cost before proceeding.`,
       },
       {
         question: "Do you repair Smart TVs and connectivity issues?",
@@ -190,7 +190,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does microwave repair cost?",
-        answer: `The visiting/diagnosis fee is ${VISITING_FEE}, with any part or repair cost quoted before we proceed.`,
+        answer: `The visiting/diagnosis fee is ₹${VISITING_FEE}, with any part or repair cost quoted before we proceed.`,
       },
       {
         question: "Is it safe to open the microwave myself to check the fault?",
@@ -229,7 +229,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does refrigerator repair cost?",
-        answer: `A ${VISITING_FEE} visiting fee covers inspection and diagnosis; repair costs are quoted after that.`,
+        answer: `A ₹${VISITING_FEE} visiting fee covers inspection and diagnosis; repair costs are quoted after that.`,
       },
       {
         question: "Do you handle single-door and double-door fridges?",
@@ -266,7 +266,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does water purifier repair cost?",
-        answer: `Visiting/diagnosis is ${VISITING_FEE}; filter, membrane, or part replacement is quoted separately.`,
+        answer: `Visiting/diagnosis is ₹${VISITING_FEE}; filter, membrane, or part replacement is quoted separately.`,
       },
       {
         question: "Do you service RO, UV, and UF purifiers?",
@@ -298,7 +298,7 @@ export const services: ServiceDefinition[] = [
     faqs: [
       {
         question: "How much does dishwasher repair cost?",
-        answer: `Visiting/diagnosis is ${VISITING_FEE}, with any repair cost quoted upfront before work begins.`,
+        answer: `Visiting/diagnosis is ₹${VISITING_FEE}, with any repair cost quoted upfront before work begins.`,
       },
     ],
     // Not yet offered — data kept ready, hidden from all pages until enabled.

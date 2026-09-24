@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { site } from "@/config/site.constants";
 import { getEnabledServices } from "@/config/services.constants";
 
-const { business, location } = site;
+const { business } = site;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const navLinks: { id: number; name: string; link: string }[] = [
     { id: 1, name: "Home", link: isServicePage ? "/" : "/#home" },
-    { id: 2, name: "Services", link: "/#services" },
+    { id: 2, name: "Services", link: "/services" },
     { id: 3, name: "Pricing", link: "/#pricing" },
     { id: 4, name: "About Us", link: "/#about" },
     {
@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 z-5 w-full bg-background"
+      className="fixed top-0 left-0 z-5 w-full bg-background/80"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -70,7 +70,7 @@ export default function Navbar() {
                       {services.map((service) => (
                         <Link
                           key={service.key}
-                          href={`/${service.baseSlug}`}
+                          href={`/services/${service.baseSlug}`}
                           className="block px-4 py-2 text-[15px] whitespace-nowrap hover:bg-secondary transition-colors"
                         >
                           {service.name}

@@ -9,6 +9,7 @@ import ContactForm from "./components/ContactForm";
 export default function Home() {
   return (
     <>
+      <div className="h-23 min-[360px]:h-18" aria-hidden="true" />
       <Hero />
       <Trust />
       <Services />

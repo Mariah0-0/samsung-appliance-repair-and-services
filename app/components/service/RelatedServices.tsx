@@ -56,7 +56,7 @@ export default function RelatedServices({
           {visible.map((service, index) => (
             <Link
               key={service.key}
-              href={`/${service.baseSlug}`}
+              href={`/services/${service.baseSlug}`}
               className={`group block bg-primary text-background transition-colors duration-200 hover:bg-primaryHover lg:translate-0 ${
                 index === 3 ? "lg:order-6" : ""
               } ${index === 1 || index === 2 ? "sm:-translate-x-4" : ""} ${

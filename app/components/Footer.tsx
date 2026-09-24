@@ -31,7 +31,7 @@ export default function Footer() {
     href: string;
   }[] = [
     { id: 1, name: "Home", href: "/#home" },
-    { id: 2, name: "Services", href: "/#services" },
+    { id: 2, name: "Services", href: "/services" },
     { id: 3, name: "Pricing", href: "/#pricing" },
     { id: 4, name: "About Us", href: "/#about" },
     { id: 5, name: "Contact Us", href: "/#contact" },
@@ -88,8 +88,8 @@ export default function Footer() {
             {serviceLinks.map((service) => (
               <Link
                 key={service.key}
-                href={`/${service.baseSlug}`}
-                className="text-sm font-light uppercase hover:underline"
+                href={`/services/${service.baseSlug}`}
+                className="text-sm font-light hover:underline"
               >
                 {service.name}
               </Link>

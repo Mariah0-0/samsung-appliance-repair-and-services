@@ -6,7 +6,7 @@ export default async function sitemap() {
   const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
 
   const serviceUrls = getEnabledServices().map((service) => ({
-    url: `${baseUrl}/${service.baseSlug}`,
+    url: `${baseUrl}/services/${service.baseSlug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -18,6 +18,12 @@ export default async function sitemap() {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     ...serviceUrls,
     {

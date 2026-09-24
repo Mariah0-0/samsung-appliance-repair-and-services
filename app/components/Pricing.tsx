@@ -31,7 +31,10 @@ export default function Pricing() {
                 className="group relative cursor-pointer transition-colors duration-100 hover:text-primary"
               >
                 <td className="pl-0.75 pr-2 py-5 text-sm md:text-base lg:text-[17px]">
-                  <Link href={`/${s.baseSlug}`} className="relative z-2">
+                  <Link
+                    href={`/services/${s.baseSlug}`}
+                    className="relative z-2"
+                  >
                     {s.pricingLabel}
                   </Link>
                 </td>
@@ -39,11 +42,11 @@ export default function Pricing() {
                   {s.pricingCovers}
                 </td>
                 <td className="pl-2 pr-0.75 py-5 text-base md:text-lg lg:text-[19px] font-semibold">
-                  {VISITING_FEE}
+                  ₹{VISITING_FEE}
                 </td>
                 <td className="absolute inset-0 p-0">
                   <Link
-                    href={`/${s.baseSlug}`}
+                    href={`/services/${s.baseSlug}`}
                     className="block w-full h-full"
                     aria-label={`View ${s.pricingLabel} service page`}
                   >

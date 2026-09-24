@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
-import { getEnabledServices } from "@/config/services.constants";
+import { getEnabledServices, VISITING_FEE } from "@/config/services.constants";
 import ServiceCard from "@/components/service/ServiceCard";
 import ServicesHubHero from "@/components/service/ServicesHubHero";
 
@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const pageUrl = `${baseUrl}/services`;
 
   const title = `${business.brand} Appliance Repair Services | ${business.name}`;
-  const description = `All ${business.brand} appliance repair services: AC, washing machine, TV, microwave oven, refrigerator. Same-day doorstep service, ₹449 visiting fee.`;
+  const description = `All ${business.brand} appliance repair services: AC, washing machine, TV, microwave oven, refrigerator. Same-day doorstep service, ₹${VISITING_FEE} visiting fee.`;
 
   return {
     title,

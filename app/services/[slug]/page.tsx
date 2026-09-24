@@ -32,7 +32,7 @@ export async function generateMetadata({
   if (!service) return {};
 
   const domain = await getDomain();
-  const baseUrl = `https://${domain}`;
+  const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
   const pageUrl = `${baseUrl}/services/${slug}`;
 
   const title = `${business.brand} ${service.name} in ${location.city} | ${business.name}`;
@@ -61,7 +61,7 @@ export default async function ServicePage({
   if (!service) notFound();
 
   const domain = await getDomain();
-  const baseUrl = `https://${domain}`;
+  const baseUrl = `https://www.${domain?.replace(/^www\./, "")}`;
   const pageUrl = `${baseUrl}/services/${slug}`;
 
   const serviceLd = {
@@ -74,6 +74,14 @@ export default async function ServicePage({
       "@type": "LocalBusiness",
       name: business.name,
       telephone: `+91${contact.phone1}`,
+      priceRange: VISITING_FEE,
+      address: {
+        "@type": "PostalAddress",
+        postalCode: location.postalCode,
+        addressLocality: location.locality,
+        addressRegion: location.state,
+        addressCountry: location.country,
+      },
     },
     areaServed: {
       "@type": "City",

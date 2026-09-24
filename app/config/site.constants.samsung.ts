@@ -31,6 +31,7 @@ export const siteConfig = {
     state: "Karnataka",
     country: "IN",
     locality: "Nagarbhavi",
+    postalCode: "560072",
     serviceRadius: "20km",
     latitude: "12.90825000",
     longitude: "77.61019444",

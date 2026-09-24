@@ -83,6 +83,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     description: `Same-day ${business.brand} appliance repair services in ${location.locality}, ${location.city} - AC, fridge, washing machine, TV and water purifier repair.`,
     address: {
       "@type": "PostalAddress",
+      postalCode: location.postalCode,
       addressLocality: location.locality,
       addressRegion: location.state,
       addressCountry: location.country,

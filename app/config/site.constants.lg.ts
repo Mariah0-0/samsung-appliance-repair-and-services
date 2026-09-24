@@ -30,6 +30,7 @@ export const siteConfig = {
     state: "Karnataka",
     country: "IN",
     locality: "Sarjapura",
+    postalCode: "562125",
     serviceRadius: "20km",
     latitude: "12.861312",
     longitude: "77.773825",

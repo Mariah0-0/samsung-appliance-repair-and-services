@@ -8,6 +8,7 @@ import { getDomain } from "@/config/site.server";
 import FloatingCTA from "./components/UI/FloatingCTA";
 import WhatsApp from "./assets/WhatsApp";
 import Phone from "./assets/Phone";
+import { VISITING_FEE } from "@/config/services.constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: `${business.name} ${location.city} | Same-Day AC, Fridge, Microwave, Water Purifier, & TV Repair`,
     icons: { icon: site.business.icon },
-    description: `Expert ${business.brand} appliance repair in ${location.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹449 visiting fee. Book now.`,
+    description: `Expert ${business.brand} appliance repair in ${location.city}. Same-day service for AC, refrigerator, washing machine, TV, and water purifier. ₹${VISITING_FEE} visiting fee. Book now.`,
     keywords: [
       `${business.brand} repair ${location.city}`,
       `appliance repair ${location.city}`,
@@ -94,7 +95,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       longitude: location.longitude,
     },
     telephone: `+91${contact.phone1}`,
-    priceRange: "₹449",
+    priceRange: VISITING_FEE,
     openingHours: contact.openingHours.schema,
     serviceType: [
       "AC Repair",
@@ -125,7 +126,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               "Deep cleaning, gas leak repair, PCB issues, and compressor servicing",
             areaServed: { "@type": "City", name: location.locality },
           },
-          price: "449",
+          price: VISITING_FEE,
           priceCurrency: "INR",
         },
         {
@@ -137,7 +138,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               "Drum issues, motor repairs, drain valve faults, and auto-sensor issues",
             areaServed: { "@type": "City", name: location.locality },
           },
-          price: "449",
+          price: VISITING_FEE,
           priceCurrency: "INR",
         },
         {
@@ -149,7 +150,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               "Screen issues, motherboard problems, display and sound troubleshooting",
             areaServed: { "@type": "City", name: location.locality },
           },
-          price: "449",
+          price: VISITING_FEE,
           priceCurrency: "INR",
         },
         {
@@ -161,7 +162,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               "Filter & membrane replacement, low water flow, leakage fixes",
             areaServed: { "@type": "City", name: location.locality },
           },
-          price: "449",
+          price: VISITING_FEE,
           priceCurrency: "INR",
         },
         {
@@ -173,7 +174,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
               "Compressor issues, gas refill, thermostat problems, and defrost repairs",
             areaServed: { "@type": "City", name: location.locality },
           },
-          price: "449",
+          price: VISITING_FEE,
           priceCurrency: "INR",
         },
       ],

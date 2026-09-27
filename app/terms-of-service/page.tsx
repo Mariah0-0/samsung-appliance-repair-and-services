@@ -1,6 +1,7 @@
 import { site } from "@/config/site.constants";
 import { getDomain } from "@/config/site.server";
 import type { Metadata } from "next";
+import { VISITING_FEE } from "../config/services.constants";
 
 const { business, contact, location } = site;
 
@@ -77,7 +78,9 @@ export default async function PrivacyPolicy() {
 
       <h2 className={h2Styles}>3. Payments</h2>
       <p className="mb-2">
-        <span className="font-semibold">A visiting charge of ₹449</span>
+        <span className="font-semibold">
+          A visiting charge of ₹{VISITING_FEE}
+        </span>
         <span>
           {" "}
           applies for every service visit. This charge covers technician
@@ -184,6 +187,10 @@ export default async function PrivacyPolicy() {
         <li>
           <span className="font-semibold">Phone:</span>
           <span> {contact.phone1}</span>
+        </li>
+        <li>
+          <span className="font-semibold">Email:</span>
+          <span> {contact.email}</span>
         </li>
         <li>
           <span className="font-semibold">Alternate phone:</span>

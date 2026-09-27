@@ -230,6 +230,10 @@ export default async function PrivacyPolicy() {
           <span> {domain}</span>
         </li>
         <li>
+          <span className="font-semibold">Email:</span>
+          <span> {contact.email}</span>
+        </li>
+        <li>
           <span className="font-semibold">Phone:</span>
           <span> {contact.phone1}</span>
         </li>

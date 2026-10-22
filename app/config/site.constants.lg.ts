@@ -23,6 +23,7 @@ export const siteConfig = {
     legalEntity: "LG Electronics Inc. and/or LG Electronics India Pvt. Ltd.",
     icon: "lg-favicon.ico",
   },
+  analytics: { gtmId: "GTM-KFKR9TTH" },
   contact,
   links,
   location: {

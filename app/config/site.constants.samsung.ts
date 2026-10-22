@@ -24,6 +24,7 @@ export const siteConfig = {
       "Samsung Electronics Co., Ltd. and/or Samsung India Electronics Pvt. Ltd.",
     icon: "samsung-favicon.ico",
   },
+  analytics: { gtmId: "" },
   contact,
   links,
   location: {

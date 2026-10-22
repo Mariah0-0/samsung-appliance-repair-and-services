@@ -25,7 +25,7 @@ const inter = Inter({
   ],
 });
 
-const { business, contact, links, location, colors } = site;
+const { business, analytics, contact, links, location, colors } = site;
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = await getDomain();
@@ -210,7 +210,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           crossOrigin="anonymous"
         />
       </head>
-      <GoogleTagManager gtmId="GTM-KFKR9TTH" />
+      {analytics.gtmId && <GoogleTagManager gtmId={analytics.gtmId} />}
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}

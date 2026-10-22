@@ -9,7 +9,7 @@ import FloatingCTA from "./components/UI/FloatingCTA";
 import WhatsApp from "./assets/WhatsApp";
 import Phone from "./assets/Phone";
 import { VISITING_FEE } from "@/config/services.constants";
-import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -210,19 +210,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           crossOrigin="anonymous"
         />
       </head>
+      <GoogleTagManager gtmId="GTM-KFKR9TTH" />
       <body className="min-h-full flex flex-col">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18487626338"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-tag" strategy="afterInteractive">
-          {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18487626338');
-    `}
-        </Script>
         <Navbar />
         {children}
         <Footer />
